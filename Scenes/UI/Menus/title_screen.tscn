@@ -1,0 +1,34 @@
+[gd_scene load_steps=2 format=3 uid="uid://73ari1ck7ry4"]
+
+[ext_resource type="Script" path="res://Scenes/UI/Menus/title_screen.gd" id="1_nmr0i"]
+
+[node name="title_screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nmr0i")
+
+[node name="play_button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 871.0
+offset_top = 618.0
+offset_right = 1066.0
+offset_bottom = 738.0
+rotation = -0.55085
+text = "Play
+"
+
+[node name="quit_button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 925.0
+offset_top = 791.0
+offset_right = 1099.0
+offset_bottom = 876.0
+text = "Quit
+"
+
+[connection signal="pressed" from="play_button" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="quit_button" to="." method="_on_quit_button_pressed"]

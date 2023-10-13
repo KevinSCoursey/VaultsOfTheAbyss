@@ -1,3 +1,26 @@
-[gd_scene format=3 uid="uid://dyp3imj0v2rx2"]
+[gd_scene load_steps=4 format=3 uid="uid://dyp3imj0v2rx2"]
+
+[ext_resource type="PackedScene" uid="uid://c1lws0l4s5j43" path="res://Scenes/Character/Player/player.tscn" id="1_2myhk"]
+[ext_resource type="Script" path="res://Scenes/Character/Player/player.gd" id="2_1yyoa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qq4sc"]
+size = Vector2(960, 235)
 
 [node name="world" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 578.0
+offset_top = 474.0
+offset_right = 1452.0
+offset_bottom = 559.0
+text = "Hello world"
+
+[node name="player" parent="." instance=ExtResource("1_2myhk")]
+position = Vector2(897, 601)
+script = ExtResource("2_1yyoa")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(908, 788)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_qq4sc")

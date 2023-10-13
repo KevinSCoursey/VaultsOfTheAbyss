@@ -1,2 +1,3 @@
-res://Useful Resources/URLs.txt
+res://Scenes/Character/Player/player.tscn
 res://Scenes/World/world.tscn
+res://Scenes/Character/Player/player.gd
