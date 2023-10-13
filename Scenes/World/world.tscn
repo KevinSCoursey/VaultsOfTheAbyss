@@ -3,8 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://c1lws0l4s5j43" path="res://Scenes/Character/Player/player.tscn" id="1_2myhk"]
 [ext_resource type="Script" path="res://Scenes/Character/Player/player.gd" id="2_1yyoa"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qq4sc"]
-size = Vector2(960, 235)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lgg8e"]
+size = Vector2(40, 40)
 
 [node name="world" type="Node2D"]
 
@@ -13,14 +13,50 @@ offset_left = 578.0
 offset_top = 474.0
 offset_right = 1452.0
 offset_bottom = 559.0
-text = "Hello world"
+text = "Controls A,D,Space"
 
 [node name="player" parent="." instance=ExtResource("1_2myhk")]
 position = Vector2(897, 601)
 script = ExtResource("2_1yyoa")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(908, 788)
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 800.0
+offset_top = 647.0
+offset_right = 840.0
+offset_bottom = 687.0
+scale = Vector2(5, 3)
+color = Color(0.560784, 0.337255, 0.231373, 1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-shape = SubResource("RectangleShape2D_qq4sc")
+[node name="StaticBody2D" type="StaticBody2D" parent="ColorRect"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect/StaticBody2D"]
+position = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_lgg8e")
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = 1055.0
+offset_top = 613.0
+offset_right = 1095.0
+offset_bottom = 653.0
+scale = Vector2(5, 3)
+color = Color(0.560784, 0.337255, 0.231373, 1)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="ColorRect2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect2/StaticBody2D"]
+position = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_lgg8e")
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+offset_left = 529.0
+offset_top = 587.0
+offset_right = 569.0
+offset_bottom = 627.0
+scale = Vector2(5, 3)
+color = Color(0.560784, 0.337255, 0.231373, 1)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="ColorRect3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect3/StaticBody2D"]
+position = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_lgg8e")
