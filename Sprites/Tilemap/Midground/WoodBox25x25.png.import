@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rghcfjbcuuwj"
-path="res://.godot/imported/Player.png-0662117005c6b9039deb63a286c8efe4.ctex"
+uid="uid://brh3lekrkifko"
+path="res://.godot/imported/WoodBox25x25.png-4d2e5206073ebb3157800322b4414b86.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Player.png"
-dest_files=["res://.godot/imported/Player.png-0662117005c6b9039deb63a286c8efe4.ctex"]
+source_file="res://Sprites/Tilemap/Midground/WoodBox25x25.png"
+dest_files=["res://.godot/imported/WoodBox25x25.png-4d2e5206073ebb3157800322b4414b86.ctex"]
 
 [params]
 

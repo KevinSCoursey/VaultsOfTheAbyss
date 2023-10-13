@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1697204676
+::res://::1697229970
 icon.svg::CompressedTexture2D::8592079225549302919::1697158753::1697158762::1::::<><>::
 README.md::TextFile::-1::1697158586::0::1::::<><>::
 ::res://Code/::1697160368
@@ -16,28 +16,27 @@ README.md::TextFile::-1::1697158586::0::1::::<><>::
 ::res://Scenes/Character/NPC/Friendly/::1697159915
 ::res://Scenes/Character/NPC/Hostile/::1697159899
 ::res://Scenes/Character/NPC/Neutral/::1697159909
-::res://Scenes/Character/Player/::1697178415
-player.gd::GDScript::-1::1697178395::0::1::::<>CharacterBody2D<>::
-player.tscn::PackedScene::6621828706820326026::1697178415::0::1::::<><>::uid://cgyssfxnvrqvj::::res://Sprites/adventurer-v1.5-Sheet.png
+::res://Scenes/Character/Player/::1697225523
+player.gd::GDScript::-1::1697225444::0::1::::<>CharacterBody2D<>::
+player.tscn::PackedScene::6621828706820326026::1697225523::0::1::::<><>::uid://cgyssfxnvrqvj::::res://Sprites/adventurer-v1.5-Sheet.png
 ::res://Scenes/UI/::1697164685
 ::res://Scenes/UI/Game Overlay/::1697160225
-::res://Scenes/UI/Menus/::1697165698
+::res://Scenes/UI/Menus/::1697225523
 title_screen.gd::GDScript::-1::1697165145::0::1::::<>Control<>::
-title_screen.tscn::PackedScene::2303876392484321649::1697165698::0::1::::<><>::res://Scenes/UI/Menus/title_screen.gd
-::res://Scenes/World/::1697178398
-world.tscn::PackedScene::8876474972200148981::1697178398::0::1::::<><>::uid://c1lws0l4s5j43::::res://Scenes/Character/Player/player.tscn<>res://Scenes/Character/Player/player.gd
+title_screen.tscn::PackedScene::2303876392484321649::1697225523::0::1::::<><>::res://Scenes/UI/Menus/title_screen.gd<>uid://b1pyb5a07vpey::::res://Sprites/Backgrounds/background 3.jpg
+::res://Scenes/World/::1697225523
+world.tscn::PackedScene::8876474972200148981::1697225523::0::1::::<><>::uid://c1lws0l4s5j43::::res://Scenes/Character/Player/player.tscn<>res://Scenes/Character/Player/player.gd<>uid://bl206rkrptcs3::::res://Sprites/Tilemap/Midground/Grass.png
 ::res://Sound/::1697160626
 ::res://Sound/Effects/::1697160626
 ::res://Sound/Music/::1697160586
-::res://Sprites/::1697204676
+::res://Sprites/::1697222238
 adventurer-v1.5-Sheet.png::CompressedTexture2D::5244644844238578763::1697168297::1697168297::1::::<><>::
-Player.png::CompressedTexture2D::1206025475476992741::1697163224::1697163224::1::::<><>::
-::res://Sprites/Backgrounds/::1697204676
+::res://Sprites/Backgrounds/::1697204677
 background 3.jpg::CompressedTexture2D::4243756855093135268::1697204669::1697204677::1::::<><>::
-::res://Useful Resources/::1697168408
-Asset Credits.txt::TextFile::-1::1697168408::0::1::::<><>::
-Design rules.txt::TextFile::-1::1697162107::0::1::::<><>::
-URLs.txt::TextFile::-1::1697162122::0::1::::<><>::
+::res://Sprites/Tilemap/::1697225114
+::res://Sprites/Tilemap/Midground/::1697229970
+Grass.png::CompressedTexture2D::3215810356639478192::1697225112::1697225114::1::::<><>::
+WoodBox25x25.png::CompressedTexture2D::3595801615676015734::1697229966::1697229971::1::::<><>::
 ::res://Visuals/::1697160566
 ::res://Visuals/Animation/::1697160566
 ::res://Visuals/Particles/::1697160559
