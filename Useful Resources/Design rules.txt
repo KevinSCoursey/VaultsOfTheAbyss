@@ -1,0 +1,3 @@
+16 bit graphics to mandate simplicity. What does this mean? To start, sprites can't exceed 64x64, 32x32, or 16x16 px
+
+Color pallet (RGB): See the 'Color Pallet 1x16.xcf' file located in the 'Useful Resources' folder

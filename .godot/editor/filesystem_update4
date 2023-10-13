@@ -1,2 +1,4 @@
-res://Useful Resources/URLs.txt
+res://Scenes/UI/Menus/title_screen.tscn
 res://Scenes/World/world.tscn
+res://Scenes/Character/Player/player.tscn
+res://Useful Resources/URLs.txt
