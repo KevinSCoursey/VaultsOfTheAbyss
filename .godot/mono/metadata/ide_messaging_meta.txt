@@ -1,0 +1,2 @@
+﻿65529
+C:/Users/kevin/Desktop/Godot/Godot Versions/Godot_v4.1.2-stable_mono_win64/Godot_v4.1.2-stable_mono_win64.exe
