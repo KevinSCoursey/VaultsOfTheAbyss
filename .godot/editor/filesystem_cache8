@@ -1,3 +1,34 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1697158761
+::res://::1697160580
 icon.svg::CompressedTexture2D::8592079225549302919::1697158753::1697158762::1::::<><>::
+README.md::TextFile::-1::1697158586::0::1::::<><>::
+::res://Code/::1697160368
+::res://Code/Character/::1697160394
+::res://Code/Character/NPC/::1697160484
+::res://Code/Character/NPC/Friendly/::1697160458
+::res://Code/Character/NPC/Hostile/::1697160463
+::res://Code/Character/NPC/Neutral/::1697160484
+::res://Code/Character/Player/::1697160394
+::res://Code/UI/::1697160361
+::res://Scenes/::1697160198
+::res://Scenes/Character/::1697159892
+::res://Scenes/Character/NPC/::1697159915
+::res://Scenes/Character/NPC/Friendly/::1697159915
+::res://Scenes/Character/NPC/Hostile/::1697159899
+::res://Scenes/Character/NPC/Neutral/::1697159909
+::res://Scenes/Character/Player/::1697159887
+::res://Scenes/UI/::1697160232
+::res://Scenes/UI/Game Overlay/::1697160225
+::res://Scenes/UI/Menus/::1697160213
+::res://Scenes/UI/Start Screen/::1697160206
+::res://Scenes/World/::1697160340
+world.tscn::PackedScene::8876474972200148981::1697160340::0::1::::<><>::
+::res://Sound/::1697160586
+::res://Sound/Music/::1697160586
+::res://Sprites/::1697160575
+::res://Useful Resources/::1697160331
+URLs.txt::TextFile::-1::1697160331::0::1::::<><>::
+::res://Visuals/::1697160566
+::res://Visuals/Animation/::1697160566
+::res://Visuals/Particles/::1697160559
+::res://Visuals/Shaders/::1697160554
