@@ -2,7 +2,9 @@ extends CharacterBody2D
 
 
 const SPEED = 300.0
-const JUMP_VELOCITY = -250.0
+const JUMP_VELOCITY = -300.0
+# Step height in pixels
+const STEP_HEIGHT = 5
 @onready var animation_player := $AnimationPlayer
 @onready var animated_sprite_2d := $AnimatedSprite2D
 

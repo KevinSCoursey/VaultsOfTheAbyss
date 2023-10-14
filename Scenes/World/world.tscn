@@ -1,31 +1,27 @@
-[gd_scene load_steps=6 format=3 uid="uid://dyp3imj0v2rx2"]
+[gd_scene load_steps=7 format=3 uid="uid://dyp3imj0v2rx2"]
 
 [ext_resource type="PackedScene" uid="uid://c1lws0l4s5j43" path="res://Scenes/Character/Player/player.tscn" id="1_2myhk"]
+[ext_resource type="Theme" uid="uid://cs3x28ngyxi82" path="res://Themes/ui_theme.tres" id="1_nty0c"]
 [ext_resource type="Script" path="res://Scenes/Character/Player/player.gd" id="2_1yyoa"]
-[ext_resource type="Texture2D" uid="uid://bl206rkrptcs3" path="res://Sprites/Tilemap/Midground/Grass.png" id="3_i65sc"]
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yopmb"]
-texture = ExtResource("3_i65sc")
-texture_region_size = Vector2i(50, 50)
-0:0/0 = 0
-0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:0/0/physics_layer_0/angular_velocity = 0.0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-25, -25, 25, -25, 25, 25, -25, 25)
-
-[sub_resource type="TileSet" id="TileSet_0knc2"]
-tile_size = Vector2i(50, 50)
-physics_layer_0/collision_layer = 1
-navigation_layer_0/layers = 1
-sources/1 = SubResource("TileSetAtlasSource_yopmb")
+[ext_resource type="TileSet" uid="uid://b7n4ofp3g3wa4" path="res://2D Navigation/Tile Set/tile_set_surface_50x50.tres" id="3_ejdu0"]
+[ext_resource type="TileSet" uid="uid://clfctc35gppci" path="res://2D Navigation/Tile Set/tile_set_surface_25x25.tres" id="4_1u4y3"]
+[ext_resource type="TileSet" uid="uid://bbkq7goyf282c" path="res://2D Navigation/Tile Set/tile_set_surface_5x5.tres" id="6_7hn21"]
 
 [node name="world" type="Node2D"]
 
-[node name="Label" type="Label" parent="."]
-offset_left = 744.0
-offset_top = 496.0
-offset_right = 1136.0
-offset_bottom = 600.0
-text = "Controls A,D,Space. Specifically designed to NOT be able to jump above the midground blocks. Must use smaller colision shapes (not yet implemented)"
+[node name="Control (Scale is 0_125x)" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+scale = Vector2(0.125, 0.125)
+theme = ExtResource("1_nty0c")
+
+[node name="Label" type="Label" parent="Control (Scale is 0_125x)"]
+layout_mode = 0
+offset_left = 6216.0
+offset_top = 4176.0
+offset_right = 7688.0
+offset_bottom = 4600.0
+text = "Controls A,D,Space. Specifically designed to NOT be able to jump above the 50x50  midground blocks. Must use smaller colision shapes (not yet implemented)"
 horizontal_alignment = 1
 autowrap_mode = 3
 
@@ -33,9 +29,22 @@ autowrap_mode = 3
 position = Vector2(897, 601)
 script = ExtResource("2_1yyoa")
 
-[node name="TileMap" type="TileMap" parent="."]
-tile_set = SubResource("TileSet_0knc2")
-cell_quadrant_size = 64
+[node name="time_map_container" type="Node2D" parent="."]
+
+[node name="TileMap50x50" type="TileMap" parent="time_map_container"]
+tile_set = ExtResource("3_ejdu0")
+cell_quadrant_size = 50
 format = 2
 layer_0/name = "Ground"
 layer_0/tile_data = PackedInt32Array(851985, 1, 0, 851986, 1, 0, 851987, 1, 0, 851988, 1, 0, 851989, 1, 0, 851983, 1, 0, 851982, 1, 0, 786451, 1, 0, 786452, 1, 0, 786453, 1, 0, 786446, 1, 0, 720910, 1, 0, 655374, 1, 0, 589838, 1, 0, 589839, 1, 0, 589840, 1, 0, 589841, 1, 0, 589842, 1, 0, 589843, 1, 0, 589844, 1, 0, 589845, 1, 0, 589846, 1, 0, 589847, 1, 0, 655383, 1, 0, 720919, 1, 0, 786455, 1, 0, 851991, 1, 0)
+
+[node name="TileMap25x25" type="TileMap" parent="time_map_container"]
+tile_set = ExtResource("4_1u4y3")
+cell_quadrant_size = 25
+format = 2
+layer_0/tile_data = PackedInt32Array(1638435, 0, 0, 1507368, 0, 0, 1507369, 0, 0, 1441833, 0, 0)
+
+[node name="TileMap5x5" type="TileMap" parent="time_map_container"]
+tile_set = ExtResource("6_7hn21")
+format = 2
+layer_0/tile_data = PackedInt32Array(8454333, 1, 0, 8454328, 1, 0, 8454329, 1, 0, 8388793, 1, 0, 8454330, 1, 0, 8454331, 1, 0, 8388795, 1, 0, 8388794, 1, 0, 8323258, 1, 0, 8323259, 1, 0, 8257723, 1, 0, 8192187, 1, 0, 8192188, 1, 0, 8257724, 1, 0, 8257725, 1, 0, 8323260, 1, 0, 8388796, 1, 0, 8454332, 1, 0, 8388797, 1, 0, 8323261, 1, 0, 8454327, 1, 0, 8388791, 1, 0, 8388792, 1, 0, 8323256, 1, 0, 8323257, 1, 0, 8257721, 1, 0, 8257722, 1, 0, 8192189, 1, 0, 8126652, 1, 0, 8126653, 1, 0, 8061117, 1, 0)

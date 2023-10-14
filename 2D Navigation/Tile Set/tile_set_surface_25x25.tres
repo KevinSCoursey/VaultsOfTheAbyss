@@ -1,0 +1,17 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://clfctc35gppci"]
+
+[ext_resource type="Texture2D" uid="uid://brh3lekrkifko" path="res://Sprites/Tilemap/Midground/WoodBox25x25.png" id="1_niu7b"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cnacl"]
+texture = ExtResource("1_niu7b")
+texture_region_size = Vector2i(25, 25)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-12.5, -12.5, 12.5, -12.5, 12.5, 12.5, -12.5, 12.5)
+
+[resource]
+tile_size = Vector2i(25, 25)
+physics_layer_0/collision_layer = 1
+navigation_layer_0/layers = 1
+sources/0 = SubResource("TileSetAtlasSource_cnacl")

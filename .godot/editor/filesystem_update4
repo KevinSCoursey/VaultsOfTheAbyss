@@ -1,4 +1,7 @@
 res://Scenes/World/world.tscn
+res://2D Navigation/Tile Set/tile_set_surface_25x25.tres
 res://Scenes/Character/Player/player.tscn
 res://Scenes/UI/Menus/title_screen.tscn
+res://Themes/ui_theme.tres
 res://Scenes/Character/Player/player.gd
+res://2D Navigation/Tile Set/tile_set_surface_5x5.tres

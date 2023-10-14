@@ -1,7 +1,12 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1697229970
+::res://::1697303204
 icon.svg::CompressedTexture2D::8592079225549302919::1697158753::1697158762::1::::<><>::
 README.md::TextFile::-1::1697158586::0::1::::<><>::
+::res://2D Navigation/::1697298434
+::res://2D Navigation/Tile Set/::1697303204
+tile_set_surface_5x5.tres::TileSet::2478282260026546116::1697303179::0::1::::<><>::
+tile_set_surface_25x25.tres::TileSet::5555396049917494816::1697298624::0::1::::<><>::uid://brh3lekrkifko::::res://Sprites/Tilemap/Midground/WoodBox25x25.png
+tile_set_surface_50x50.tres::TileSet::4661086671887963253::1697298422::0::1::::<><>::uid://bl206rkrptcs3
 ::res://Code/::1697160368
 ::res://Code/Character/::1697160394
 ::res://Code/Character/NPC/::1697160484
@@ -16,28 +21,33 @@ README.md::TextFile::-1::1697158586::0::1::::<><>::
 ::res://Scenes/Character/NPC/Friendly/::1697159915
 ::res://Scenes/Character/NPC/Hostile/::1697159899
 ::res://Scenes/Character/NPC/Neutral/::1697159909
-::res://Scenes/Character/Player/::1697225523
-player.gd::GDScript::-1::1697225444::0::1::::<>CharacterBody2D<>::
-player.tscn::PackedScene::6621828706820326026::1697225523::0::1::::<><>::uid://cgyssfxnvrqvj::::res://Sprites/adventurer-v1.5-Sheet.png
+::res://Scenes/Character/Player/::1697302902
+player.gd::GDScript::-1::1697302902::0::1::::<>CharacterBody2D<>::
+player.tscn::PackedScene::6621828706820326026::1697302902::0::1::::<><>::uid://bt1pwbsheqdps::::res://Sprites/Adventurer Sheet 30x30.png
 ::res://Scenes/UI/::1697164685
 ::res://Scenes/UI/Game Overlay/::1697160225
-::res://Scenes/UI/Menus/::1697225523
+::res://Scenes/UI/Menus/::1697302902
 title_screen.gd::GDScript::-1::1697165145::0::1::::<>Control<>::
-title_screen.tscn::PackedScene::2303876392484321649::1697225523::0::1::::<><>::res://Scenes/UI/Menus/title_screen.gd<>uid://b1pyb5a07vpey::::res://Sprites/Backgrounds/background 3.jpg
-::res://Scenes/World/::1697225523
-world.tscn::PackedScene::8876474972200148981::1697225523::0::1::::<><>::uid://c1lws0l4s5j43::::res://Scenes/Character/Player/player.tscn<>res://Scenes/Character/Player/player.gd<>uid://bl206rkrptcs3::::res://Sprites/Tilemap/Midground/Grass.png
+title_screen.tscn::PackedScene::2303876392484321649::1697302902::0::1::::<><>::res://Scenes/UI/Menus/title_screen.gd<>uid://b1pyb5a07vpey::::res://Sprites/Backgrounds/background 3.jpg
+::res://Scenes/World/::1697302902
+world.tscn::PackedScene::8876474972200148981::1697302902::0::1::::<><>::uid://c1lws0l4s5j43::::res://Scenes/Character/Player/player.tscn<>uid://cs3x28ngyxi82::::res://Themes/ui_theme.tres<>res://Scenes/Character/Player/player.gd<>uid://b7n4ofp3g3wa4::::res://2D Navigation/Tile Set/tile_set_surface_50x50.tres<>uid://clfctc35gppci::::res://2D Navigation/Tile Set/tile_set_surface_25x25.tres
 ::res://Sound/::1697160626
 ::res://Sound/Effects/::1697160626
 ::res://Sound/Music/::1697160586
-::res://Sprites/::1697222238
+::res://Sprites/::1697302331
+Adventurer Sheet 30x30.png::CompressedTexture2D::3774632657432531004::1697302325::1697302331::1::::<><>::
 adventurer-v1.5-Sheet.png::CompressedTexture2D::5244644844238578763::1697168297::1697168297::1::::<><>::
 ::res://Sprites/Backgrounds/::1697204677
 background 3.jpg::CompressedTexture2D::4243756855093135268::1697204669::1697204677::1::::<><>::
 ::res://Sprites/Tilemap/::1697225114
-::res://Sprites/Tilemap/Midground/::1697229970
+::res://Sprites/Tilemap/Midground/::1697303204
 Grass.png::CompressedTexture2D::3215810356639478192::1697225112::1697225114::1::::<><>::
+WoodBox5x5.png::CompressedTexture2D::8492473352401891946::1697303202::1697303204::1::::<><>::
 WoodBox25x25.png::CompressedTexture2D::3595801615676015734::1697229966::1697229971::1::::<><>::
-::res://Visuals/::1697160566
+::res://Themes/::1697302590
+Color Pallet 1x17.png::CompressedTexture2D::4420130070951578641::1697300009::1697300011::1::::<><>::
+ui_theme.tres::Theme::6095489590912130773::1697302590::0::1::::<><>::
+::res://Visuals/::1697300011
 ::res://Visuals/Animation/::1697160566
 ::res://Visuals/Particles/::1697160559
 ::res://Visuals/Shaders/::1697160554

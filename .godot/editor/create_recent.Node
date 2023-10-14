@@ -1,4 +1,6 @@
 TileMap
+Control
+Node2D
 ColorRect
 Label
 TextureRect
