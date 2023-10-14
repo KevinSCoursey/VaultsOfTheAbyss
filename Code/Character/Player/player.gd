@@ -1,5 +1,9 @@
 extends CharacterBody2D
 
+# Design criteria:
+# Single jump not to exceed 50px
+# Multi-jump (NYI)
+# Step height determines px size that functions as stairs (NYI)
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -300.0

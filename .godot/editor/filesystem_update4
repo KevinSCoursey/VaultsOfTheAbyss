@@ -5,3 +5,7 @@ res://Scenes/UI/Menus/title_screen.tscn
 res://Themes/ui_theme.tres
 res://Scenes/Character/Player/player.gd
 res://2D Navigation/Tile Set/tile_set_surface_5x5.tres
+res://Code/World/world_select.gd
+res://2D Navigation/Tile Set/tile_set_surface_50x50.tres
+res://Scenes/World/character_controller_test.tscn
+res://Code/Character/Player/player.gd

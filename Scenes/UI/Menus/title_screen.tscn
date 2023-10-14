@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://73ari1ck7ry4"]
+[gd_scene load_steps=4 format=3 uid="uid://dl4csqxtl4fut"]
 
-[ext_resource type="Script" path="res://Scenes/UI/Menus/title_screen.gd" id="1_nmr0i"]
+[ext_resource type="Script" path="res://Code/UI/title_screen.gd" id="1_n32of"]
 [ext_resource type="Texture2D" uid="uid://b1pyb5a07vpey" path="res://Sprites/Backgrounds/background 3.jpg" id="2_h8rww"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_d4y7j"]
@@ -13,7 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_nmr0i")
+script = ExtResource("1_n32of")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0

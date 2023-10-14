@@ -1,6 +1,7 @@
-[gd_scene load_steps=27 format=3 uid="uid://c1lws0l4s5j43"]
+[gd_scene load_steps=28 format=3 uid="uid://c1lws0l4s5j43"]
 
 [ext_resource type="Texture2D" uid="uid://bt1pwbsheqdps" path="res://Sprites/Adventurer Sheet 30x30.png" id="1_46141"]
+[ext_resource type="Script" path="res://Code/Character/Player/player.gd" id="1_bn15i"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g6lcy"]
 radius = 6.5
@@ -300,6 +301,7 @@ _data = {
 }
 
 [node name="player" type="CharacterBody2D"]
+script = ExtResource("1_bn15i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 0.5)

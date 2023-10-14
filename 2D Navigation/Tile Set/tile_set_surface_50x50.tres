@@ -1,9 +1,9 @@
 [gd_resource type="TileSet" load_steps=3 format=3 uid="uid://b7n4ofp3g3wa4"]
 
-[ext_resource type="Texture2D" uid="uid://bl206rkrptcs3" path="res://Sprites/Tilemap/Midground/Grass.png" id="1_tqnob"]
+[ext_resource type="Texture2D" uid="uid://bl206rkrptcs3" path="res://Sprites/Tilemap/Midground/Grass.png" id="1_ln3qi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yopmb"]
-texture = ExtResource("1_tqnob")
+texture = ExtResource("1_ln3qi")
 texture_region_size = Vector2i(50, 50)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
