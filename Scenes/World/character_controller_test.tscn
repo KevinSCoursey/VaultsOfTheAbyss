@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://1yjleih3iwef"]
+
+[ext_resource type="TileSet" uid="uid://b7n4ofp3g3wa4" path="res://2D Navigation/Tile Set/tile_set_surface_50x50.tres" id="1_8uw7i"]
+[ext_resource type="TileSet" uid="uid://clfctc35gppci" path="res://2D Navigation/Tile Set/tile_set_surface_25x25.tres" id="2_f38hi"]
+[ext_resource type="TileSet" uid="uid://bbkq7goyf282c" path="res://2D Navigation/Tile Set/tile_set_surface_5x5.tres" id="3_ln68s"]
+[ext_resource type="PackedScene" uid="uid://c1lws0l4s5j43" path="res://Scenes/Character/Player/player.tscn" id="4_6navo"]
+
+[node name="character_controller_test" type="Node2D"]
+
+[node name="time_map_container" type="Node2D" parent="."]
+
+[node name="TileMap50x50" type="TileMap" parent="time_map_container"]
+tile_set = ExtResource("1_8uw7i")
+cell_quadrant_size = 50
+format = 2
+layer_0/name = "Ground"
+layer_0/tile_data = PackedInt32Array(131071, 1, 0, 65536, 1, 0, 65537, 1, 0, 131070, 1, 0, 131069, 1, 0, 65538, 1, 0, 131065, 1, 0, 131066, 1, 0, 131067, 1, 0, 65540, 1, 0, 65541, 1, 0, 65542, 1, 0, 65543, 1, 0, 65544, 1, 0, 65545, 1, 0, 1, 1, 0, -65534, 1, 0, 2, 1, 0)
+
+[node name="TileMap25x25" type="TileMap" parent="time_map_container"]
+tile_set = ExtResource("2_f38hi")
+cell_quadrant_size = 25
+format = 2
+layer_0/tile_data = PackedInt32Array(131059, 0, 0, 131060, 0, 0, 65524, 0, 0, -12, 0, 0, 131061, 0, 0, 65525, 0, 0, 131062, 0, 0, 65545, 0, 0, 65547, 0, 0, 11, 0, 0, 65549, 0, 0, 13, 0, 0, -65523, 0, 0, 15, 0, 0, 65551, 0, 0, 65553, 0, 0, 65537, 0, 0, -65533, 0, 0, 131067, 0, 0, 131068, 0, 0)
+
+[node name="TileMap5x5" type="TileMap" parent="time_map_container"]
+tile_set = ExtResource("3_ln68s")
+format = 2
+layer_0/tile_data = PackedInt32Array(327657, 1, 0, 327658, 1, 0, 327659, 1, 0, 262122, 1, 0, 262121, 1, 0, 196585, 1, 0, 196586, 1, 0, 131050, 1, 0, 262120, 1, 0, 327656, 1, 0, -720873, 1, 0, -786409, 1, 0, -851945, 1, 0, -720870, 1, 0, -786406, 1, 0, -851942, 1, 0, -917478, 1, 0, -983014, 1, 0, -1048550, 1, 0, -1114086, 1, 0, -1179622, 1, 0, -720868, 1, 0, -786404, 1, 0, 262174, 1, 0)
+
+[node name="player" parent="." instance=ExtResource("4_6navo")]
+position = Vector2(-18, 32)

@@ -1,0 +1,16 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://bbkq7goyf282c"]
+
+[ext_resource type="Texture2D" uid="uid://ds822bomnr0bm" path="res://Sprites/Tilemap/Midground/WoodBox5x5.png" id="1_buvgl"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_usygt"]
+texture = ExtResource("1_buvgl")
+texture_region_size = Vector2i(5, 5)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2.5, -2.5, 2.5, -2.5, 2.5, 2.5, -2.5, 2.5)
+
+[resource]
+tile_size = Vector2i(5, 5)
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_usygt")

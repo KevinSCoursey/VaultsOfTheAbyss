@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rghcfjbcuuwj"
-path="res://.godot/imported/Player.png-0662117005c6b9039deb63a286c8efe4.ctex"
+uid="uid://bt1pwbsheqdps"
+path="res://.godot/imported/Adventurer Sheet 30x30.png-7bbe3e1eceda1482c683a5257488cf26.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Player.png"
-dest_files=["res://.godot/imported/Player.png-0662117005c6b9039deb63a286c8efe4.ctex"]
+source_file="res://Sprites/Adventurer Sheet 30x30.png"
+dest_files=["res://.godot/imported/Adventurer Sheet 30x30.png-7bbe3e1eceda1482c683a5257488cf26.ctex"]
 
 [params]
 
