@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://1yjleih3iwef"]
+[gd_scene load_steps=6 format=3 uid="uid://1yjleih3iwef"]
 
 [ext_resource type="TileSet" uid="uid://b7n4ofp3g3wa4" path="res://2D Navigation/Tile Set/tile_set_surface_50x50.tres" id="1_8uw7i"]
 [ext_resource type="TileSet" uid="uid://clfctc35gppci" path="res://2D Navigation/Tile Set/tile_set_surface_25x25.tres" id="2_f38hi"]
 [ext_resource type="TileSet" uid="uid://bbkq7goyf282c" path="res://2D Navigation/Tile Set/tile_set_surface_5x5.tres" id="3_ln68s"]
 [ext_resource type="PackedScene" uid="uid://c1lws0l4s5j43" path="res://Scenes/Character/Player/player.tscn" id="4_6navo"]
+[ext_resource type="PackedScene" uid="uid://dvhxd5khswd5d" path="res://Scenes/World/Objects/crate.tscn" id="5_ghltp"]
 
 [node name="character_controller_test" type="Node2D"]
 
@@ -28,4 +29,25 @@ format = 2
 layer_0/tile_data = PackedInt32Array(327657, 1, 0, 327658, 1, 0, 327659, 1, 0, 262122, 1, 0, 262121, 1, 0, 196585, 1, 0, 196586, 1, 0, 131050, 1, 0, 262120, 1, 0, 327656, 1, 0, -720873, 1, 0, -786409, 1, 0, -851945, 1, 0, -720870, 1, 0, -786406, 1, 0, -851942, 1, 0, -917478, 1, 0, -983014, 1, 0, -1048550, 1, 0, -1114086, 1, 0, -1179622, 1, 0, -720868, 1, 0, -786404, 1, 0, 262174, 1, 0)
 
 [node name="player" parent="." instance=ExtResource("4_6navo")]
-position = Vector2(-18, 32)
+position = Vector2(39, -36)
+slide_on_ceiling = false
+floor_snap_length = 2.0
+
+[node name="obstacles" type="Node2D" parent="."]
+
+[node name="crate" parent="obstacles" instance=ExtResource("5_ghltp")]
+
+[node name="crate2" parent="obstacles" instance=ExtResource("5_ghltp")]
+position = Vector2(-35, -8)
+
+[node name="crate3" parent="obstacles" instance=ExtResource("5_ghltp")]
+position = Vector2(-40, -39)
+
+[node name="crate4" parent="obstacles" instance=ExtResource("5_ghltp")]
+position = Vector2(-75, -62)
+
+[node name="crate5" parent="obstacles" instance=ExtResource("5_ghltp")]
+position = Vector2(-10, -59)
+
+[node name="crate6" parent="obstacles" instance=ExtResource("5_ghltp")]
+position = Vector2(-39, -72)
