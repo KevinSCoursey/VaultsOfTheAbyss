@@ -1,7 +1,8 @@
-[gd_scene load_steps=29 format=3 uid="uid://c1lws0l4s5j43"]
+[gd_scene load_steps=37 format=3 uid="uid://c1lws0l4s5j43"]
 
-[ext_resource type="Texture2D" uid="uid://doujakbnw8wi2" path="res://Sprites/Adventurer Sheet 30x30.png" id="1_46141"]
+[ext_resource type="Texture2D" uid="uid://dyg0qtpkvp3lq" path="res://Sprites/Adventurer Sheet 30x30.png" id="1_46141"]
 [ext_resource type="Script" path="res://Code/Character/Player/player.gd" id="1_bn15i"]
+[ext_resource type="Script" path="res://Scenes/Character/Player/player_camera2D.gd" id="3_2aedr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_22m0a"]
 size = Vector2(10, 28)
@@ -48,6 +49,22 @@ region = Rect2(60, 60, 30, 30)
 [sub_resource type="AtlasTexture" id="AtlasTexture_0p6x0"]
 atlas = SubResource("CompressedTexture2D_kdmb7")
 region = Rect2(90, 60, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lrsji"]
+atlas = ExtResource("1_46141")
+region = Rect2(60, 90, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u0yef"]
+atlas = ExtResource("1_46141")
+region = Rect2(90, 90, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l38cr"]
+atlas = ExtResource("1_46141")
+region = Rect2(120, 90, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b34ek"]
+atlas = ExtResource("1_46141")
+region = Rect2(150, 90, 30, 30)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ub4yq"]
 atlas = ExtResource("1_46141")
@@ -123,6 +140,23 @@ animations = [{
 "loop": true,
 "name": &"jump",
 "speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lrsji")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u0yef")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l38cr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b34ek")
+}],
+"loop": true,
+"name": &"multi-jump",
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -293,16 +327,56 @@ tracks/1/keys = {
 "values": [0, 1, 2, 1]
 }
 
+[sub_resource type="Animation" id="Animation_7147m"]
+resource_name = "multi-jump"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"multi-jump"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 0]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_apxfk"]
 _data = {
 "RESET": SubResource("Animation_aldbm"),
 "fall": SubResource("Animation_hvhqm"),
 "idle": SubResource("Animation_ukdi2"),
 "jump": SubResource("Animation_j1p7s"),
+"multi-jump": SubResource("Animation_7147m"),
 "run": SubResource("Animation_dusb7")
 }
 
+[sub_resource type="Gradient" id="Gradient_gjnvt"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_2v5qx"]
+gradient = SubResource("Gradient_gjnvt")
+width = 1
+
 [node name="player" type="CharacterBody2D"]
+floor_block_on_wall = false
+floor_max_angle = 0.872665
+floor_snap_length = 0.0
 script = ExtResource("1_bn15i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -315,10 +389,44 @@ animation = &"fall"
 metadata/_edit_lock_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
+top_level = true
 zoom = Vector2(4, 4)
+script = ExtResource("3_2aedr")
 metadata/_edit_lock_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_apxfk")
 }
+
+[node name="RayCast2D Front" type="RayCast2D" parent="."]
+visible = false
+
+[node name="TextureRect" type="TextureRect" parent="RayCast2D Front"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.5
+offset_top = -0.5
+offset_right = 0.5
+offset_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_2v5qx")
+expand_mode = 1
+
+[node name="RayCast2D Back" type="RayCast2D" parent="."]
+visible = false
+
+[node name="TextureRect2" type="TextureRect" parent="RayCast2D Back"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.5
+offset_top = -0.5
+offset_right = 0.5
+offset_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_2v5qx")
+expand_mode = 1

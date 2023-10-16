@@ -1,3 +1,6 @@
+HSlider
+TextureRect
+RayCast2D
 Sprite2D
 MeshInstance2D
 CollisionShape2D
@@ -9,7 +12,6 @@ TileMap
 Control
 ColorRect
 Label
-TextureRect
 Container
 AnimationPlayer
 Camera2D
