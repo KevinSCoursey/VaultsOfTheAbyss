@@ -11,6 +11,7 @@
 [node name="time_map_container" type="Node2D" parent="."]
 
 [node name="TileMap50x50" type="TileMap" parent="time_map_container"]
+scale = Vector2(2, 2)
 tile_set = ExtResource("1_8uw7i")
 cell_quadrant_size = 50
 format = 2
@@ -18,36 +19,38 @@ layer_0/name = "Ground"
 layer_0/tile_data = PackedInt32Array(131071, 1, 0, 65536, 1, 0, 65537, 1, 0, 131070, 1, 0, 131069, 1, 0, 65538, 1, 0, 131065, 1, 0, 131066, 1, 0, 131067, 1, 0, 65540, 1, 0, 65541, 1, 0, 65542, 1, 0, 65543, 1, 0, 65544, 1, 0, 65545, 1, 0, 1, 1, 0, -65534, 1, 0, 2, 1, 0, 131064, 1, 0, 131063, 1, 0, 131062, 1, 0, 131061, 1, 0, 131060, 1, 0, 131059, 1, 0, 131058, 1, 0, 131057, 1, 0, 131056, 1, 0, 131055, 1, 0, 131054, 1, 0, 131053, 1, 0, 131052, 1, 0, 131051, 1, 0, 131050, 1, 0, 131049, 1, 0, 131048, 1, 0, 131047, 1, 0, 131046, 1, 0)
 
 [node name="TileMap25x25" type="TileMap" parent="time_map_container"]
+scale = Vector2(2, 2)
 tile_set = ExtResource("2_f38hi")
 cell_quadrant_size = 25
 format = 2
 layer_0/tile_data = PackedInt32Array(131059, 0, 0, 131060, 0, 0, 65524, 0, 0, -12, 0, 0, 131061, 0, 0, 65525, 0, 0, 131062, 0, 0, 65545, 0, 0, 65547, 0, 0, 11, 0, 0, 65549, 0, 0, 13, 0, 0, -65523, 0, 0, 15, 0, 0, 65551, 0, 0, 65553, 0, 0, 65537, 0, 0, -65533, 0, 0, 131067, 0, 0, 131068, 0, 0)
 
 [node name="TileMap5x5" type="TileMap" parent="time_map_container"]
+scale = Vector2(2, 2)
 tile_set = ExtResource("3_ln68s")
 format = 2
 layer_0/tile_data = PackedInt32Array(327657, 1, 0, 327658, 1, 0, 327659, 1, 0, 262122, 1, 0, 262121, 1, 0, 196585, 1, 0, 196586, 1, 0, 131050, 1, 0, 262120, 1, 0, 327656, 1, 0, -720873, 1, 0, -786409, 1, 0, -851945, 1, 0, -720870, 1, 0, -786406, 1, 0, -851942, 1, 0, -917478, 1, 0, -983014, 1, 0, -1048550, 1, 0, -1114086, 1, 0, -1179622, 1, 0, -720868, 1, 0, -786404, 1, 0, 262174, 1, 0)
 
 [node name="player" parent="." instance=ExtResource("4_6navo")]
 position = Vector2(39, -36)
-slide_on_ceiling = false
 floor_snap_length = 2.0
 
 [node name="obstacles" type="Node2D" parent="."]
 
 [node name="crate" parent="obstacles" instance=ExtResource("5_ghltp")]
+position = Vector2(-12, 38)
 
 [node name="crate2" parent="obstacles" instance=ExtResource("5_ghltp")]
-position = Vector2(-35, -8)
+position = Vector2(-77, 38)
 
 [node name="crate3" parent="obstacles" instance=ExtResource("5_ghltp")]
-position = Vector2(-40, -39)
+position = Vector2(-69, -61)
 
 [node name="crate4" parent="obstacles" instance=ExtResource("5_ghltp")]
-position = Vector2(-75, -62)
+position = Vector2(-140, -31)
 
 [node name="crate5" parent="obstacles" instance=ExtResource("5_ghltp")]
-position = Vector2(-10, -59)
+position = Vector2(-5, -107)
 
 [node name="crate6" parent="obstacles" instance=ExtResource("5_ghltp")]
-position = Vector2(-39, -72)
+position = Vector2(-88, -131)

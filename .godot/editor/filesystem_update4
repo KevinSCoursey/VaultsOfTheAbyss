@@ -3,7 +3,7 @@ res://Themes/ui_theme.tres
 res://2D Navigation/Tile Set/tile_set_surface_50x50.tres
 res://2D Navigation/Tile Set/tile_set_surface_25x25.tres
 res://2D Navigation/Tile Set/tile_set_surface_5x5.tres
-res://Code/Character/Player/player.gd
 res://Scenes/World/character_controller_test.tscn
 res://Scenes/Character/Player/player.tscn
 res://Scenes/World/Objects/crate.tscn
+res://Code/Character/Player/player.gd

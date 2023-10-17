@@ -13,6 +13,7 @@ config_version=5
 config/name="Vaults of the Abyss"
 run/main_scene="res://Scenes/UI/Menus/title_screen.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
+run/max_fps=60
 config/icon="res://icon.svg"
 
 [autoload]
@@ -47,8 +48,15 @@ jump={
 ]
 }
 
+[physics]
+
+2d/run_on_separate_thread=true
+2d/physics_engine="GodotPhysics2D"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
 textures/lossless_compression/force_png=true
 textures/default_filters/anisotropic_filtering_level=4
+anti_aliasing/quality/msaa_2d=1
+2d/snap/snap_2d_transforms_to_pixel=true
