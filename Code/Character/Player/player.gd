@@ -56,14 +56,30 @@ func _physics_process(delta):
 		velocity.x = direction * SPEED
 		animated_sprite_2d.flip_h = direction < 0
 	else:
-		if velocity.y == 0:
+		if velocity.y == 0 and not \
+		(animation_player.is_playing() and animation_player.current_animation == "melee-attack-ground"):
 			animation_player.play("idle")
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	if velocity.y > 0 and not is_on_floor() and not \
-	(animation_player.is_playing() and animation_player.current_animation == "multi-jump"):
+	(animation_player.is_playing() and animation_player.current_animation == "multi-jump" \
+	or animation_player.current_animation == "melee-attack-air"):
 		animation_player.play("fall")
 	move_and_slide()
 	
+func _unhandled_input(event):
+	if event.is_action_pressed("attack"):
+		# Makes the player look in the direction that the mouse was clicked for an attack
+		animated_sprite_2d.flip_h = not _is_mouse_right_of_player()
+		# Play the appropriate attack animation depending on if the player is on the ground or not
+		if is_on_floor():
+			animation_player.play("melee-attack-ground")
+		else:
+			animation_player.play("melee-attack-air")
+		
+func _is_mouse_right_of_player():
+	# Checks if the position of the mouse is to the right of the player
+	return get_global_mouse_position().x >= transform.origin.x
+
 func _position_raycasts():
 	# Gets the CollisionShape2D's height (y)
 	var collision_shape_height = $CollisionShape2D.shape.size.y

@@ -7,3 +7,4 @@ res://Scenes/World/character_controller_test.tscn
 res://Scenes/Character/Player/player.tscn
 res://Scenes/World/Objects/crate.tscn
 res://Code/Character/Player/player.gd
+res://Code/Auto Load Resources/user_input_constants.gd

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b38e5qlh2uq4h"
-path="res://.godot/imported/Color Pallet 1x17.png-bf30eadf68ddd56ae42d9733088be1b6.ctex"
+uid="uid://uhe0baeyny56"
+path="res://.godot/imported/Color Pallet.png-55ba0335686df54c4ce4635c71862e5b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Themes/Color Pallet 1x17.png"
-dest_files=["res://.godot/imported/Color Pallet 1x17.png-bf30eadf68ddd56ae42d9733088be1b6.ctex"]
+source_file="res://Themes/Color Pallet.png"
+dest_files=["res://.godot/imported/Color Pallet.png-55ba0335686df54c4ce4635c71862e5b.ctex"]
 
 [params]
 

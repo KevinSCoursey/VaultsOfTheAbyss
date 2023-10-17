@@ -1,6 +1,6 @@
-[gd_scene load_steps=37 format=3 uid="uid://c1lws0l4s5j43"]
+[gd_scene load_steps=46 format=3 uid="uid://c1lws0l4s5j43"]
 
-[ext_resource type="Texture2D" uid="uid://dyg0qtpkvp3lq" path="res://Sprites/Adventurer Sheet 30x30.png" id="1_46141"]
+[ext_resource type="Texture2D" uid="uid://b3cbkb8aahod" path="res://Sprites/Adventurer Sheet 30x30.png" id="1_46141"]
 [ext_resource type="Script" path="res://Code/Character/Player/player.gd" id="1_bn15i"]
 [ext_resource type="Script" path="res://Scenes/Character/Player/player_camera2D.gd" id="3_2aedr"]
 
@@ -49,6 +49,34 @@ region = Rect2(60, 60, 30, 30)
 [sub_resource type="AtlasTexture" id="AtlasTexture_0p6x0"]
 atlas = SubResource("CompressedTexture2D_kdmb7")
 region = Rect2(90, 60, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ewe7g"]
+atlas = ExtResource("1_46141")
+region = Rect2(210, 60, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0nph6"]
+atlas = ExtResource("1_46141")
+region = Rect2(240, 60, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t1upa"]
+atlas = ExtResource("1_46141")
+region = Rect2(333, 90, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ufajf"]
+atlas = ExtResource("1_46141")
+region = Rect2(120, 60, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xopui"]
+atlas = ExtResource("1_46141")
+region = Rect2(150, 60, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_snbxe"]
+atlas = ExtResource("1_46141")
+region = Rect2(180, 60, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vxnep"]
+atlas = ExtResource("1_46141")
+region = Rect2(330, 50, 50, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lrsji"]
 atlas = ExtResource("1_46141")
@@ -142,6 +170,37 @@ animations = [{
 "speed": 6.0
 }, {
 "frames": [{
+"duration": 1.2,
+"texture": SubResource("AtlasTexture_ewe7g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0nph6")
+}, {
+"duration": 1.2,
+"texture": SubResource("AtlasTexture_t1upa")
+}],
+"loop": true,
+"name": &"melee-attack-air",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.2,
+"texture": SubResource("AtlasTexture_ufajf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xopui")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_snbxe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vxnep")
+}],
+"loop": true,
+"name": &"melee-attack-ground",
+"speed": 5.0
+}, {
+"frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_lrsji")
 }, {
@@ -215,7 +274,6 @@ tracks/1/keys = {
 [sub_resource type="Animation" id="Animation_hvhqm"]
 resource_name = "fall"
 length = 0.4
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -244,7 +302,6 @@ tracks/1/keys = {
 [sub_resource type="Animation" id="Animation_ukdi2"]
 resource_name = "idle"
 length = 2.5
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -329,7 +386,6 @@ tracks/1/keys = {
 [sub_resource type="Animation" id="Animation_dusb7"]
 resource_name = "run"
 length = 0.8
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -355,12 +411,70 @@ tracks/1/keys = {
 "values": [0, 1, 2, 1]
 }
 
+[sub_resource type="Animation" id="Animation_hv2ex"]
+resource_name = "melee-attack-ground"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"melee-attack-ground"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_kqdl4"]
+resource_name = "melee-attack-air"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"melee-attack-air"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_apxfk"]
 _data = {
 "RESET": SubResource("Animation_aldbm"),
 "fall": SubResource("Animation_hvhqm"),
 "idle": SubResource("Animation_ukdi2"),
 "jump": SubResource("Animation_j1p7s"),
+"melee-attack-air": SubResource("Animation_kqdl4"),
+"melee-attack-ground": SubResource("Animation_hv2ex"),
 "multi-jump": SubResource("Animation_7147m"),
 "run": SubResource("Animation_dusb7")
 }
@@ -390,7 +504,6 @@ shape = SubResource("RectangleShape2D_22m0a")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_qdf8u")
 animation = &"fall"
-frame = 1
 metadata/_edit_lock_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
