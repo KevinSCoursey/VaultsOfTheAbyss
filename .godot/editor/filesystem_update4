@@ -4,6 +4,11 @@ res://2D Navigation/Tile Set/tile_set_surface_50x50.tres
 res://2D Navigation/Tile Set/tile_set_surface_25x25.tres
 res://2D Navigation/Tile Set/tile_set_surface_5x5.tres
 res://Physics/crate_physics_material.tres
+res://Code/State Machine/air_state.gd
 res://Scenes/World/world.tscn
 res://Scenes/World/character_controller_test.tscn
 res://Scenes/World/Objects/crate.tscn
+res://Code/State Machine/ground_state.gd
+res://Code/State Machine/character_state_machine.gd
+res://Code/Character/Player/player.gd
+res://Code/State Machine/state.gd

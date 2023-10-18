@@ -1,3 +1,5 @@
+Label
+Node
 Sprite2D
 AnimationTree
 HSlider
@@ -8,11 +10,9 @@ CollisionShape2D
 RigidBody2D
 Node2D
 Button
-Node
 TileMap
 Control
 ColorRect
-Label
 Container
 AnimationPlayer
 Camera2D

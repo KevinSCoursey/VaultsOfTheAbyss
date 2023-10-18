@@ -3,7 +3,7 @@
 [ext_resource type="TileSet" uid="uid://b7n4ofp3g3wa4" path="res://2D Navigation/Tile Set/tile_set_surface_50x50.tres" id="1_8uw7i"]
 [ext_resource type="TileSet" uid="uid://clfctc35gppci" path="res://2D Navigation/Tile Set/tile_set_surface_25x25.tres" id="2_f38hi"]
 [ext_resource type="TileSet" uid="uid://bbkq7goyf282c" path="res://2D Navigation/Tile Set/tile_set_surface_5x5.tres" id="3_ln68s"]
-[ext_resource type="PackedScene" uid="uid://c1lws0l4s5j43" path="res://Scenes/Character/Player/player.tscn" id="4_6navo"]
+[ext_resource type="PackedScene" uid="uid://6lbm3ajnwxr7" path="res://Scenes/Character/Player/player.tscn" id="4_6navo"]
 [ext_resource type="PackedScene" uid="uid://dvhxd5khswd5d" path="res://Scenes/World/Objects/crate.tscn" id="5_ghltp"]
 
 [node name="character_controller_test" type="Node2D"]
@@ -36,6 +36,7 @@ position = Vector2(39, -36)
 floor_snap_length = 2.0
 
 [node name="obstacles" type="Node2D" parent="."]
+position = Vector2(-614, -173)
 
 [node name="crate" parent="obstacles" instance=ExtResource("5_ghltp")]
 position = Vector2(-12, 38)
