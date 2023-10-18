@@ -12,8 +12,6 @@ var step_height = 10
 var multi_jumps_max := 1
 
 # Nodes to get at runtime:
-@onready var animation_player := $AnimationPlayer
-@onready var animated_sprite_2d := $AnimatedSprite2D
 @onready var animation_tree := $AnimationTree
 @onready var sprite_2d := $Sprite2D
 # Get the auto-loaded resource UserInputConstants from the scene root. This is a constant,
@@ -41,39 +39,24 @@ func _physics_process(delta):
 	direction = Input.get_vector(USER_INPUT.MOVE_LEFT, USER_INPUT.MOVE_RIGHT, \
 	USER_INPUT.MOVE_UP, USER_INPUT.MOVE_DOWN)
 	
-	# Allow the current state to handle motion
 	if state_machine.current_state != null:
+		# Allow the current state to handle motion
 		state_machine.current_state.move(direction, delta)
 		
-	# Allow the player to jump if they are either on the floor or have not yet used all
-	# of their available double jumps.
 	if state_machine.current_state != null and Input.is_action_just_pressed(USER_INPUT.JUMP):
+		# Allow the current state to handle jumping
 		state_machine.current_state.jump()
 		
 	move_and_slide()
 	update_animation_parameters()
-	# update_sprite_facing_direction()
 	
-func _unhandled_input(_event):
-	pass
-#	if event.is_action_pressed("attack"):
-#		# Makes the player look in the direction that the mouse was clicked for an attack
-#		animated_sprite_2d.flip_h = not is_mouse_right_of_player()
-#		# Play the appropriate attack animation depending on if the player is on the ground or not
-#		if is_on_floor():
-#			$AnimationTree.get("parameters/playback").travel("melee-attack-ground")
-#		else:
-#			$AnimationTree.get("parameters/playback").travel("melee-attack-air")
+func _unhandled_input(event):
+	if state_machine.current_state != null and event.is_action_pressed("attack"):
+		# Allow the current state to handle attacking
+		state_machine.current_state.melee_attack()
 
 func update_animation_parameters():
 	animation_tree.set("parameters/move/blend_position", direction.x)
-	
-func is_mouse_right_of_player():
-	# Checks if the position of the mouse is to the right of the player
-	return get_global_mouse_position().x >= transform.origin.x
-
-func update_sprite_facing_direction():
-	sprite_2d.flip_h = direction.x < 0
 
 func position_raycasts():
 	# Gets the CollisionShape2D's height (y)

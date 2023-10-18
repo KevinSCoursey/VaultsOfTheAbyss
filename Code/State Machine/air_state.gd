@@ -29,6 +29,12 @@ func jump():
 		character.velocity.y = character.jump_velocity
 		playback.travel("flip")
 
+func melee_attack():
+	# Displays the melee attack animation and makes the character face the side of the screen that
+	# the mouse was clicked on
+	character.sprite_2d.flip_h = is_mouse_right_of_player()
+	playback.travel("melee-air-swing")
+
 func on_exit_state():
 	if next_state == ground_state:
 		# If the next state is the ground, reset the multi-jump counter. We don't want to reset

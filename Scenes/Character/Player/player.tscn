@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=3 uid="uid://6lbm3ajnwxr7"]
+[gd_scene load_steps=84 format=3 uid="uid://6lbm3ajnwxr7"]
 
 [ext_resource type="Texture2D" uid="uid://b3cbkb8aahod" path="res://Sprites/Adventurer Sheet 30x30.png" id="1_46141"]
 [ext_resource type="Script" path="res://Code/Character/Player/player.gd" id="1_bn15i"]
@@ -28,6 +28,12 @@ animation = &"flip"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7u4gs"]
 animation = &"jump"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2ujwg"]
+animation = &"melee-air-swing"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_gfur5"]
+animation = &"melee-swing"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_khvn4"]
 animation = &"idle"
@@ -69,21 +75,41 @@ advance_mode = 2
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4r56i"]
 advance_mode = 2
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_fjrtv"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_6hwud"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_k0rsa"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4yykm"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ttx3x"]
+switch_mode = 2
+advance_mode = 2
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_ddnw3"]
-states/End/position = Vector2(240, 125.011)
+states/End/position = Vector2(488, -31.789)
 states/Start/position = Vector2(-262.224, 131.168)
 states/fall/node = SubResource("AnimationNodeAnimation_hpeps")
-states/fall/position = Vector2(75.8, 37.664)
+states/fall/position = Vector2(87, 31.264)
 "states/fall from ledge/node" = SubResource("AnimationNodeAnimation_de416")
-"states/fall from ledge/position" = Vector2(94.4, 131.197)
+"states/fall from ledge/position" = Vector2(69.6, 133.235)
 states/flip/node = SubResource("AnimationNodeAnimation_ijwa0")
 states/flip/position = Vector2(182, -24.6)
 states/jump/node = SubResource("AnimationNodeAnimation_7u4gs")
 states/jump/position = Vector2(-138.6, -3.2)
+states/melee-air-swing/node = SubResource("AnimationNodeAnimation_2ujwg")
+states/melee-air-swing/position = Vector2(361.2, 305.8)
+states/melee-swing/node = SubResource("AnimationNodeAnimation_gfur5")
+states/melee-swing/position = Vector2(-36.4, 237)
 states/move/node = SubResource("AnimationNodeBlendSpace1D_5w4wf")
 states/move/position = Vector2(-73, 130.774)
-transitions = ["Start", "move", SubResource("AnimationNodeStateMachineTransition_lvq20"), "move", "jump", SubResource("AnimationNodeStateMachineTransition_20yus"), "jump", "fall", SubResource("AnimationNodeStateMachineTransition_73isx"), "fall", "move", SubResource("AnimationNodeStateMachineTransition_auwrp"), "fall", "flip", SubResource("AnimationNodeStateMachineTransition_be2k0"), "flip", "fall", SubResource("AnimationNodeStateMachineTransition_50hyh"), "move", "fall from ledge", SubResource("AnimationNodeStateMachineTransition_1oftp"), "fall from ledge", "fall", SubResource("AnimationNodeStateMachineTransition_4r56i")]
-graph_offset = Vector2(-766, -2)
+transitions = ["Start", "move", SubResource("AnimationNodeStateMachineTransition_lvq20"), "move", "jump", SubResource("AnimationNodeStateMachineTransition_20yus"), "jump", "fall", SubResource("AnimationNodeStateMachineTransition_73isx"), "fall", "move", SubResource("AnimationNodeStateMachineTransition_auwrp"), "fall", "flip", SubResource("AnimationNodeStateMachineTransition_be2k0"), "flip", "fall", SubResource("AnimationNodeStateMachineTransition_50hyh"), "move", "fall from ledge", SubResource("AnimationNodeStateMachineTransition_1oftp"), "fall from ledge", "fall", SubResource("AnimationNodeStateMachineTransition_4r56i"), "fall", "melee-air-swing", SubResource("AnimationNodeStateMachineTransition_fjrtv"), "melee-air-swing", "move", SubResource("AnimationNodeStateMachineTransition_6hwud"), "melee-air-swing", "fall", SubResource("AnimationNodeStateMachineTransition_k0rsa"), "move", "melee-swing", SubResource("AnimationNodeStateMachineTransition_4yykm"), "melee-swing", "move", SubResource("AnimationNodeStateMachineTransition_ttx3x")]
+graph_offset = Vector2(-598, -157)
 
 [sub_resource type="Animation" id="Animation_6ntym"]
 length = 0.001
@@ -308,7 +334,6 @@ tracks/2/keys = {
 [sub_resource type="Animation" id="Animation_viwoc"]
 resource_name = "melee-air-swing"
 length = 0.3
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -349,7 +374,6 @@ tracks/2/keys = {
 [sub_resource type="Animation" id="Animation_nhfi2"]
 resource_name = "melee-swing"
 length = 0.55
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -712,6 +736,7 @@ script = ExtResource("3_vnc88")
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_ddnw3")
 anim_player = NodePath("../AnimationPlayer")
+active = true
 parameters/move/blend_position = 0.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -724,8 +749,8 @@ position = Vector2(0, 11)
 shape = SubResource("RectangleShape2D_22m0a")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("5_fxte1")
-hframes = 5
+texture = ExtResource("2_ibmon")
+hframes = 6
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 visible = false

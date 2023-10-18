@@ -33,3 +33,9 @@ func jump():
 		character.velocity.y = character.jump_velocity
 		next_state = air_state
 		playback.travel("jump")
+		
+func melee_attack():
+	# Displays the melee attack animation and makes the character face the side of the screen that
+	# the mouse was clicked on
+	character.sprite_2d.flip_h = is_mouse_right_of_player()
+	playback.travel("melee-swing")
