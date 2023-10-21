@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://1yjleih3iwef"]
+[gd_scene load_steps=7 format=3 uid="uid://1yjleih3iwef"]
 
 [ext_resource type="TileSet" uid="uid://b7n4ofp3g3wa4" path="res://2D Navigation/Tile Set/tile_set_surface_50x50.tres" id="1_8uw7i"]
 [ext_resource type="TileSet" uid="uid://clfctc35gppci" path="res://2D Navigation/Tile Set/tile_set_surface_25x25.tres" id="2_f38hi"]
 [ext_resource type="TileSet" uid="uid://bbkq7goyf282c" path="res://2D Navigation/Tile Set/tile_set_surface_5x5.tres" id="3_ln68s"]
 [ext_resource type="PackedScene" uid="uid://6lbm3ajnwxr7" path="res://Scenes/Character/Player/player.tscn" id="4_6navo"]
 [ext_resource type="PackedScene" uid="uid://dvhxd5khswd5d" path="res://Scenes/World/Objects/crate.tscn" id="5_ghltp"]
+[ext_resource type="PackedScene" uid="uid://bfkge7ytuqr5w" path="res://Scenes/World/Objects/ladder_long.tscn" id="6_83md6"]
 
 [node name="character_controller_test" type="Node2D"]
 
@@ -29,10 +30,10 @@ layer_0/tile_data = PackedInt32Array(131059, 0, 0, 131060, 0, 0, 65524, 0, 0, -1
 scale = Vector2(2, 2)
 tile_set = ExtResource("3_ln68s")
 format = 2
-layer_0/tile_data = PackedInt32Array(327657, 1, 0, 327658, 1, 0, 327659, 1, 0, 262122, 1, 0, 262121, 1, 0, 196585, 1, 0, 196586, 1, 0, 131050, 1, 0, 262120, 1, 0, 327656, 1, 0, -720873, 1, 0, -786409, 1, 0, -851945, 1, 0, -720870, 1, 0, -786406, 1, 0, -851942, 1, 0, -917478, 1, 0, -983014, 1, 0, -1048550, 1, 0, -1114086, 1, 0, -1179622, 1, 0, -720868, 1, 0, -786404, 1, 0, 262174, 1, 0)
+layer_0/tile_data = PackedInt32Array(327657, 1, 0, 327658, 1, 0, 327659, 1, 0, 262122, 1, 0, 262121, 1, 0, 196585, 1, 0, 196586, 1, 0, 131050, 1, 0, 262120, 1, 0, 327656, 1, 0, -720873, 1, 0, -786409, 1, 0, -851945, 1, 0, -720870, 1, 0, -786406, 1, 0, -851942, 1, 0, -917478, 1, 0, -983014, 1, 0, -1048550, 1, 0, -1114086, 1, 0, -1179622, 1, 0, -720868, 1, 0, -786404, 1, 0, 262174, 1, 0, 327684, 1, 0, 393219, 1, 0, 458754, 1, 0, 524289, 1, 0, 589824, 1, 0, 589825, 1, 0, 589826, 1, 0, 589827, 1, 0, 524291, 1, 0, 458755, 1, 0, 458756, 1, 0, 393220, 1, 0, 524292, 1, 0, 589828, 1, 0, 524290, 1, 0, 262149, 1, 0, 262150, 1, 0, 262151, 1, 0, 196615, 1, 0, 196614, 1, 0, 131079, 1, 0, 131080, 1, 0, 65544, 1, 0, 65545, 1, 0, 9, 1, 0, 131081, 1, 0, 196616, 1, 0, 262152, 1, 0, 262153, 1, 0, 196617, 1, 0, 65531, 1, 0, 65530, 1, 0, 65529, 1, 0, 65528, 1, 0, 65527, 1, 0, 65526, 1, 0, 0, 1, 0, 1, 1, 0, 2, 1, 0)
 
 [node name="player" parent="." instance=ExtResource("4_6navo")]
-position = Vector2(39, -36)
+position = Vector2(-119, -37)
 floor_snap_length = 2.0
 
 [node name="obstacles" type="Node2D" parent="."]
@@ -55,3 +56,9 @@ position = Vector2(-5, -107)
 
 [node name="crate6" parent="obstacles" instance=ExtResource("5_ghltp")]
 position = Vector2(-88, -131)
+
+[node name="Ladder Long" parent="." instance=ExtResource("6_83md6")]
+position = Vector2(-20, 49)
+
+[node name="Ladder Long2" parent="." instance=ExtResource("6_83md6")]
+position = Vector2(-20, -51)

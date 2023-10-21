@@ -1,11 +1,11 @@
 class_name AirState extends State
 
-# Gets the ground state from the parent state machine
-@onready var ground_state : State = get_parent().find_child("Ground")
 # State behavior tracking
 var multi_jumps_used := 0
 
 func state_physics_process(delta):
+	check_if_trying_to_climb()
+	
 	if character.is_on_floor():
 		# If the player has touched the ground, then transition to the ground state
 		next_state = ground_state

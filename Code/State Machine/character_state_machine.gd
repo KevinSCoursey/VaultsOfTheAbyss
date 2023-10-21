@@ -1,7 +1,7 @@
 class_name CharacterStateMachine extends Node
 
 # Player component references
-@onready var character : CharacterBody2D = get_parent()
+@onready var character : Player = get_parent()
 @onready var animation_tree : AnimationTree = get_parent().find_child("AnimationTree")
 # State handling
 @export var current_state : State

@@ -1,17 +1,21 @@
-extends CharacterBody2D
+class_name Player extends CharacterBody2D
 # Important note: The scale of the player is 2! This means that the normal things like gravity
 # are doubled
 
 # Player settings
-var speed = 400.0
-var jump_velocity = -600.0
+var speed = 300
+var climb_speed = 35
+var jump_velocity = -600
 var step_height = 10
 # Controls the number of multi-jumps the player has available.
 # Note: When jumping off the ground, the first jump is 'free' so a multi_jump max of 1
 # would result in two total jumps before hitting the ground again
 var multi_jumps_max := 1
+# Climbing control
+var climbing_region_count = 0
 
 # Nodes to get at runtime:
+@onready var debug_lines := $"Debug Lines"
 @onready var animation_tree := $AnimationTree
 @onready var sprite_2d := $Sprite2D
 # Get the auto-loaded resource UserInputConstants from the scene root. This is a constant,
@@ -23,6 +27,8 @@ var multi_jumps_max := 1
 # Get the front and back 2D raycasts. This basically lets you determine the platform angle
 @onready var raycast2d_front := $"RayCast2D Front"
 @onready var raycast2d_back := $"RayCast2D Back"
+# Gets the CollisionShape2D's height (y)
+@onready var collision_shape_height = $CollisionShape2D.shape.size.y
 
 # Input tracking
 var direction := Vector2(0, 0)
@@ -32,7 +38,12 @@ var direction := Vector2(0, 0)
 
 func _ready():
 	animation_tree.active = true
-	# position_raycasts()
+	position_raycasts()
+
+func _process(delta):
+	# This is for debug purposes only
+	debug_lines.drawing_raycast2d_front = raycast2d_front.is_colliding()
+	debug_lines.drawing_raycast2d_back = raycast2d_back.is_colliding()
 
 func _physics_process(delta):
 	# Gets the user's input for the current frame regarding axis motion
@@ -48,20 +59,19 @@ func _physics_process(delta):
 		state_machine.current_state.jump()
 		
 	move_and_slide()
-	update_animation_parameters()
 	
 func _unhandled_input(event):
 	if state_machine.current_state != null and event.is_action_pressed("attack"):
 		# Allow the current state to handle attacking
 		state_machine.current_state.melee_attack()
 
-func update_animation_parameters():
-	animation_tree.set("parameters/move/blend_position", direction.x)
-
 func position_raycasts():
-	# Gets the CollisionShape2D's height (y)
-	var collision_shape_height = $CollisionShape2D.shape.size.y
 	# Positions the RayCast2Ds to function as "feet"
-	raycast2d_front.transform.origin = Vector2(step_height, 0.5 * collision_shape_height - step_height + 2)
-	raycast2d_back.transform.origin = Vector2(-step_height, 0.5 * collision_shape_height - step_height + 2)
+	raycast2d_front.transform.origin = \
+	Vector2(step_height, 0.5 * collision_shape_height - step_height * 0.25)
+	raycast2d_front.target_position = Vector2(0, step_height)
+	
+	raycast2d_back.transform.origin = \
+	Vector2(-step_height, 0.5 * collision_shape_height - step_height * 0.25)
+	raycast2d_back.target_position = Vector2(0, step_height)
 	

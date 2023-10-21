@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bfkge7ytuqr5w"]
+
+[ext_resource type="Texture2D" uid="uid://cf4qe5b2ldgft" path="res://Sprites/Enviroment/Ladder Long.png" id="1_wtqrx"]
+[ext_resource type="Script" path="res://Code/World/climb_zone.gd" id="2_48kiy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q15wd"]
+size = Vector2(5, 50)
+
+[node name="Ladder Long" type="Node2D"]
+scale = Vector2(2, 2)
+
+[node name="Ladder Long" type="Sprite2D" parent="."]
+z_index = -1
+texture = ExtResource("1_wtqrx")
+
+[node name="Climb Zone" type="Area2D" parent="Ladder Long"]
+script = ExtResource("2_48kiy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladder Long/Climb Zone"]
+shape = SubResource("RectangleShape2D_q15wd")
+
+[connection signal="body_entered" from="Ladder Long/Climb Zone" to="Ladder Long/Climb Zone" method="_on_body_entered" flags=18]
+[connection signal="body_exited" from="Ladder Long/Climb Zone" to="Ladder Long/Climb Zone" method="_on_body_exited" flags=18]
