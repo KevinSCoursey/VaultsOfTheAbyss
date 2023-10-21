@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgyssfxnvrqvj"
-path="res://.godot/imported/adventurer-v1.5-Sheet.png-5735b29995eb375a73cbb9a0898b90bc.ctex"
+uid="uid://cf4qe5b2ldgft"
+path="res://.godot/imported/Ladder Long.png-d491c28d4e2c79f64283eec417f1548e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/adventurer-v1.5-Sheet.png"
-dest_files=["res://.godot/imported/adventurer-v1.5-Sheet.png-5735b29995eb375a73cbb9a0898b90bc.ctex"]
+source_file="res://Sprites/Enviroment/Ladder Long.png"
+dest_files=["res://.godot/imported/Ladder Long.png-d491c28d4e2c79f64283eec417f1548e.ctex"]
 
 [params]
 

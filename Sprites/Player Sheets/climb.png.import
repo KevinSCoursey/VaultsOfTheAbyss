@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b38e5qlh2uq4h"
-path="res://.godot/imported/Color Pallet 1x17.png-bf30eadf68ddd56ae42d9733088be1b6.ctex"
+uid="uid://cvrjlu30c7f1p"
+path="res://.godot/imported/climb.png-7fd586f4eedca1b45fdfbb627ff2cfd9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Themes/Color Pallet 1x17.png"
-dest_files=["res://.godot/imported/Color Pallet 1x17.png-bf30eadf68ddd56ae42d9733088be1b6.ctex"]
+source_file="res://Sprites/Player Sheets/climb.png"
+dest_files=["res://.godot/imported/climb.png-7fd586f4eedca1b45fdfbb627ff2cfd9.ctex"]
 
 [params]
 
