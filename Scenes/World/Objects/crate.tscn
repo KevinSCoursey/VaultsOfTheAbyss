@@ -9,7 +9,7 @@ size = Vector2(50, 50)
 [node name="crate" type="RigidBody2D"]
 physics_material_override = ExtResource("1_62wp0")
 continuous_cd = 2
-sleeping = true
+can_sleep = false
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(2, 2)

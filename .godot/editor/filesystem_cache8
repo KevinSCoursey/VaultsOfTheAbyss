@@ -1,76 +1,84 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1697665411
+::res://::1697900997
 icon.svg::CompressedTexture2D::8592079225549302919::1697158753::1697158762::1::::<><>::
 README.md::TextFile::-1::1697158586::0::1::::<><>::
 ::res://2D Navigation/::1697298434
-::res://2D Navigation/Tile Set/::1697646613
-tile_set_surface_5x5.tres::TileSet::2478282260026546116::1697646613::0::1::::<><>::uid://ds822bomnr0bm::::res://Sprites/Tilemap/Midground/WoodBox5x5.png
-tile_set_surface_25x25.tres::TileSet::5555396049917494816::1697646613::0::1::::<><>::uid://brh3lekrkifko::::res://Sprites/Tilemap/Midground/WoodBox25x25.png
-tile_set_surface_50x50.tres::TileSet::4661086671887963253::1697646613::0::1::::<><>::uid://bl206rkrptcs3::::res://Sprites/Tilemap/Midground/Grass.png
-::res://Code/::1697656060
-::res://Code/Auto Load Resources/::1697654282
-user_input_constants.gd::GDScript::-1::1697654282::0::1::::<>Node<>::
+::res://2D Navigation/Tile Set/::1697854781
+tile_set_surface_5x5.tres::TileSet::2478282260026546116::1697854781::0::1::::<><>::uid://ds822bomnr0bm::::res://Sprites/Tilemap/Midground/WoodBox5x5.png
+tile_set_surface_25x25.tres::TileSet::5555396049917494816::1697852533::0::1::::<><>::uid://brh3lekrkifko::::res://Sprites/Tilemap/Midground/WoodBox25x25.png
+tile_set_surface_50x50.tres::TileSet::4661086671887963253::1697852533::0::1::::<><>::uid://bl206rkrptcs3::::res://Sprites/Tilemap/Midground/Grass.png
+::res://Code/::1697669692
+::res://Code/Auto Load Resources/::1697669692
+user_input_constants.gd::GDScript::-1::1697669692::0::1::::<>Node<>::
 ::res://Code/Character/::1697160394
 ::res://Code/Character/NPC/::1697160484
 ::res://Code/Character/NPC/Friendly/::1697160458
 ::res://Code/Character/NPC/Hostile/::1697160463
 ::res://Code/Character/NPC/Neutral/::1697160484
-::res://Code/Character/Player/::1697665364
-player.gd::GDScript::-1::1697665364::0::1::::<>CharacterBody2D<>::
-::res://Code/State Machine/::1697665301
-air_state.gd::GDScript::-1::1697665301::0::1::::AirState<>State<>::
-character_state_machine.gd::GDScript::-1::1697665007::0::1::::CharacterStateMachine<>Node<>::
-ground_state.gd::GDScript::-1::1697665262::0::1::::GroundState<>State<>::
-player_camera2D.gd::GDScript::-1::1697663048::0::1::::<>Camera2D<>::
-state.gd::GDScript::-1::1697665068::0::1::::State<>Node<>::
+::res://Code/Character/Player/::1697867273
+player.gd::GDScript::-1::1697867273::0::1::::Player<>CharacterBody2D<>::
+::res://Code/State Machine/::1697860305
+air_state.gd::GDScript::-1::1697852469::0::1::::AirState<>State<>::
+character_state_machine.gd::GDScript::-1::1697844518::0::1::::CharacterStateMachine<>Node<>::
+ground_state.gd::GDScript::-1::1697860305::0::1::::GroundState<>State<>::
+player_camera2D.gd::GDScript::-1::1697669692::0::1::::<>Camera2D<>::
+state.gd::GDScript::-1::1697852496::0::1::::State<>Node<>::
 ::res://Code/UI/::1697306048
 title_screen.gd::GDScript::-1::1697165145::0::1::::<>Control<>::
-::res://Code/World/::1697319809
+::res://Code/World/::1697856076
+climb_zone.gd::GDScript::-1::1697856076::0::1::::Climb_Zone<>Area2D<>::
 world_select.gd::GDScript::-1::1697319809::0::1::::<>Node<>::
-::res://Physics/::1697646613
-crate_physics_material.tres::PhysicsMaterial::3613326454708373395::1697646613::0::1::::<><>::
+::res://Physics/::1697852533
+climb_zone_template.tscn::PackedScene::1998233141522802807::1697850498::0::1::::<><>::res://Code/World/climb_zone.gd
+crate_physics_material.tres::PhysicsMaterial::3613326454708373395::1697852533::0::1::::<><>::
 ::res://Scenes/::1697165077
 ::res://Scenes/Character/::1697159892
 ::res://Scenes/Character/NPC/::1697159915
 ::res://Scenes/Character/NPC/Friendly/::1697159915
 ::res://Scenes/Character/NPC/Hostile/::1697159899
 ::res://Scenes/Character/NPC/Neutral/::1697159909
-::res://Scenes/Character/Player/::1697665364
-player.tscn::PackedScene::2198645925674273758::1697665364::0::1::::<><>::uid://b3cbkb8aahod::::res://Sprites/Adventurer Sheet 30x30.png<>res://Code/Character/Player/player.gd<>uid://cs3x28ngyxi82::::res://Themes/ui_theme.tres<>uid://cm8elkimfox1c::::res://Sprites/Player Sheets/idle.png<>uid://d12u0k7m7fy0m::::res://Sprites/Player Sheets/run.png<>res://Scenes/Character/Player/state_debug_label.gd<>uid://b2qcryljssjrt::::res://Sprites/Player Sheets/jump.png<>uid://dc5fbfkcct46n::::res://Sprites/Player Sheets/fall.png<>uid://b2cigyvdn6rfl::::res://Sprites/Player Sheets/flip.png<>uid://bsm8mqsa5bwya::::res://Sprites/Player Sheets/melee-swing.png<>uid://7obpguvu32h::::res://Sprites/Player Sheets/melee-air-swing.png<>uid://b0w26dywwaekf::::res://Sprites/Player Sheets/NYI.png<>res://Code/State Machine/player_camera2D.gd<>res://Code/State Machine/character_state_machine.gd<>res://Code/State Machine/air_state.gd<>res://Code/State Machine/ground_state.gd
-state_debug_label.gd::GDScript::-1::1697665364::0::1::::<>Label<>::
+::res://Scenes/Character/Player/::1697867818
+climbing_state.gd::GDScript::-1::1697852129::0::1::::ClimbingState<>State<>::
+debug_lines.gd::GDScript::-1::1697867817::0::1::::<>Node2D<>::
+player.tscn::PackedScene::2198645925674273758::1697867818::0::1::::<><>::res://Code/Character/Player/player.gd<>uid://cs3x28ngyxi82::::res://Themes/ui_theme.tres<>uid://cm8elkimfox1c::::res://Sprites/Player Sheets/idle.png<>res://Scenes/Character/Player/debug_lines.gd<>uid://d12u0k7m7fy0m::::res://Sprites/Player Sheets/run.png<>res://Scenes/Character/Player/state_debug_label.gd<>uid://cvrjlu30c7f1p::::res://Sprites/Player Sheets/climb.png<>uid://b2qcryljssjrt::::res://Sprites/Player Sheets/jump.png<>uid://dc5fbfkcct46n::::res://Sprites/Player Sheets/fall.png<>uid://b2cigyvdn6rfl::::res://Sprites/Player Sheets/flip.png<>uid://bsm8mqsa5bwya::::res://Sprites/Player Sheets/melee-swing.png<>uid://7obpguvu32h::::res://Sprites/Player Sheets/melee-air-swing.png<>res://Code/State Machine/player_camera2D.gd<>res://Code/State Machine/character_state_machine.gd<>res://Code/State Machine/air_state.gd<>res://Code/State Machine/ground_state.gd<>res://Scenes/Character/Player/climbing_state.gd
+state_debug_label.gd::GDScript::-1::1697851968::0::1::::<>Label<>::
 ::res://Scenes/UI/::1697164685
 ::res://Scenes/UI/Game Overlay/::1697160225
 ::res://Scenes/UI/Menus/::1697306472
 title_screen.tscn::PackedScene::7991360741024436871::1697306472::0::1::::<><>::res://Code/UI/title_screen.gd<>uid://b1pyb5a07vpey
-::res://Scenes/World/::1697665364
-character_controller_test.tscn::PackedScene::1875021320161769925::1697665364::0::1::::<><>::uid://b7n4ofp3g3wa4::::res://2D Navigation/Tile Set/tile_set_surface_50x50.tres<>uid://clfctc35gppci::::res://2D Navigation/Tile Set/tile_set_surface_25x25.tres<>uid://bbkq7goyf282c::::res://2D Navigation/Tile Set/tile_set_surface_5x5.tres<>uid://6lbm3ajnwxr7::::res://Scenes/Character/Player/player.tscn<>uid://dvhxd5khswd5d::::res://Scenes/World/Objects/crate.tscn
-world.tscn::PackedScene::4073201196093693708::1697665364::0::1::::<><>::uid://6lbm3ajnwxr7::::res://Scenes/Character/Player/player.tscn<>uid://cs3x28ngyxi82::::res://Themes/ui_theme.tres<>res://Code/World/world_select.gd<>uid://b7n4ofp3g3wa4::::res://2D Navigation/Tile Set/tile_set_surface_50x50.tres<>uid://clfctc35gppci::::res://2D Navigation/Tile Set/tile_set_surface_25x25.tres<>uid://bbkq7goyf282c::::res://2D Navigation/Tile Set/tile_set_surface_5x5.tres
-::res://Scenes/World/Objects/::1697665364
-crate.tscn::PackedScene::8649081851463264699::1697665364::0::1::::<><>::uid://brqk7umq4tsc6::::res://Physics/crate_physics_material.tres<>uid://brh3lekrkifko::::res://Sprites/Tilemap/Midground/WoodBox25x25.png
+::res://Scenes/World/::1697867817
+character_controller_test.tscn::PackedScene::1875021320161769925::1697867817::0::1::::<><>::uid://b7n4ofp3g3wa4::::res://2D Navigation/Tile Set/tile_set_surface_50x50.tres<>uid://clfctc35gppci::::res://2D Navigation/Tile Set/tile_set_surface_25x25.tres<>uid://bbkq7goyf282c::::res://2D Navigation/Tile Set/tile_set_surface_5x5.tres<>uid://6lbm3ajnwxr7::::res://Scenes/Character/Player/player.tscn<>uid://dvhxd5khswd5d::::res://Scenes/World/Objects/crate.tscn<>uid://bfkge7ytuqr5w::::res://Scenes/World/Objects/ladder_long.tscn
+world.tscn::PackedScene::4073201196093693708::1697867817::0::1::::<><>::uid://6lbm3ajnwxr7::::res://Scenes/Character/Player/player.tscn<>uid://cs3x28ngyxi82::::res://Themes/ui_theme.tres<>res://Code/World/world_select.gd<>uid://b7n4ofp3g3wa4::::res://2D Navigation/Tile Set/tile_set_surface_50x50.tres<>uid://clfctc35gppci::::res://2D Navigation/Tile Set/tile_set_surface_25x25.tres<>uid://bbkq7goyf282c::::res://2D Navigation/Tile Set/tile_set_surface_5x5.tres
+::res://Scenes/World/Objects/::1697867273
+crate.tscn::PackedScene::8649081851463264699::1697841894::0::1::::<><>::uid://brqk7umq4tsc6
+ladder_long.tscn::PackedScene::2758381843269239030::1697867273::0::1::::<><>::uid://cf4qe5b2ldgft::::res://Sprites/Enviroment/Ladder Long.png<>res://Code/World/climb_zone.gd
 ::res://Sound/::1697160626
 ::res://Sound/Effects/::1697160626
 ::res://Sound/Music/::1697160586
-::res://Sprites/::1697649751
+::res://Sprites/::1697832401
 Adventurer Sheet 30x30.png::CompressedTexture2D::128115168808827355::1697581015::1697581015::1::::<><>::
 ::res://Sprites/Backgrounds/::1697204677
 background 3.jpg::CompressedTexture2D::4243756855093135268::1697204669::1697204677::1::::<><>::
-::res://Sprites/Player Sheets/::1697654630
-fall.png::CompressedTexture2D::7361876719894018199::1697649430::1697649431::1::::<><>::
-flip.png::CompressedTexture2D::4286145961289869153::1697649644::1697649645::1::::<><>::
-idle.png::CompressedTexture2D::5683495006775004306::1697646754::1697646758::1::::<><>::
-jump.png::CompressedTexture2D::4314702576453791369::1697648273::1697648290::1::::<><>::
-melee-air-swing.png::CompressedTexture2D::66912709879217789::1697651636::1697651638::1::::<><>::
-melee-swing.png::CompressedTexture2D::3676618360734790768::1697651910::1697651911::1::::<><>::
-NYI.png::CompressedTexture2D::4188252999323312137::1697654625::1697654630::1::::<><>::
-run.png::CompressedTexture2D::9041169744986166502::1697647702::1697647703::1::::<><>::
+::res://Sprites/Enviroment/::1697833808
+Ladder Long.png::CompressedTexture2D::5184632733990870461::1697833721::1697833808::1::::<><>::
+::res://Sprites/Player Sheets/::1697843874
+climb.png::CompressedTexture2D::6282468697133099607::1697843772::1697843874::1::::<><>::
+fall.png::CompressedTexture2D::7361876719894018199::1697669692::1697669692::1::::<><>::
+flip.png::CompressedTexture2D::4286145961289869153::1697669692::1697669692::1::::<><>::
+idle.png::CompressedTexture2D::5683495006775004306::1697669692::1697669692::1::::<><>::
+jump.png::CompressedTexture2D::4314702576453791369::1697669692::1697669692::1::::<><>::
+melee-air-swing.png::CompressedTexture2D::66912709879217789::1697669692::1697669692::1::::<><>::
+melee-swing.png::CompressedTexture2D::3676618360734790768::1697669692::1697669692::1::::<><>::
+NYI.png::CompressedTexture2D::4188252999323312137::1697669692::1697669692::1::::<><>::
+run.png::CompressedTexture2D::9041169744986166502::1697669692::1697669692::1::::<><>::
 ::res://Sprites/Tilemap/::1697326353
 ::res://Sprites/Tilemap/Midground/::1697558978
 Grass.png::CompressedTexture2D::3215810356639478192::1697225112::1697558972::1::::<><>::
 WoodBox5x5.png::CompressedTexture2D::8492473352401891946::1697303202::1697558975::1::::<><>::
 WoodBox25x25.png::CompressedTexture2D::3595801615676015734::1697229966::1697558978::1::::<><>::
-::res://Themes/::1697646613
+::res://Themes/::1697852533
 Color Pallet.png::CompressedTexture2D::1418515082595458019::1697575954::1697575954::1::::<><>::
-ui_theme.tres::Theme::6095489590912130773::1697646613::0::1::::<><>::
+ui_theme.tres::Theme::6095489590912130773::1697852533::0::1::::<><>::
 ::res://Visuals/::1697300011
 ::res://Visuals/Animation/::1697160566
 ::res://Visuals/Particles/::1697160559

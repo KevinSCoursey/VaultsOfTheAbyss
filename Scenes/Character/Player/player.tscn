@@ -1,21 +1,35 @@
-[gd_scene load_steps=84 format=3 uid="uid://6lbm3ajnwxr7"]
+[gd_scene load_steps=58 format=3 uid="uid://6lbm3ajnwxr7"]
 
-[ext_resource type="Texture2D" uid="uid://b3cbkb8aahod" path="res://Sprites/Adventurer Sheet 30x30.png" id="1_46141"]
 [ext_resource type="Script" path="res://Code/Character/Player/player.gd" id="1_bn15i"]
 [ext_resource type="Theme" uid="uid://cs3x28ngyxi82" path="res://Themes/ui_theme.tres" id="2_4o5vp"]
 [ext_resource type="Texture2D" uid="uid://cm8elkimfox1c" path="res://Sprites/Player Sheets/idle.png" id="2_ibmon"]
+[ext_resource type="Script" path="res://Scenes/Character/Player/debug_lines.gd" id="2_shrpx"]
 [ext_resource type="Texture2D" uid="uid://d12u0k7m7fy0m" path="res://Sprites/Player Sheets/run.png" id="3_jflsj"]
 [ext_resource type="Script" path="res://Scenes/Character/Player/state_debug_label.gd" id="3_vnc88"]
+[ext_resource type="Texture2D" uid="uid://cvrjlu30c7f1p" path="res://Sprites/Player Sheets/climb.png" id="4_2wxsc"]
 [ext_resource type="Texture2D" uid="uid://b2qcryljssjrt" path="res://Sprites/Player Sheets/jump.png" id="4_4rimn"]
 [ext_resource type="Texture2D" uid="uid://dc5fbfkcct46n" path="res://Sprites/Player Sheets/fall.png" id="5_fxte1"]
 [ext_resource type="Texture2D" uid="uid://b2cigyvdn6rfl" path="res://Sprites/Player Sheets/flip.png" id="6_wgvo0"]
 [ext_resource type="Texture2D" uid="uid://bsm8mqsa5bwya" path="res://Sprites/Player Sheets/melee-swing.png" id="7_yril4"]
 [ext_resource type="Texture2D" uid="uid://7obpguvu32h" path="res://Sprites/Player Sheets/melee-air-swing.png" id="8_3fc02"]
-[ext_resource type="Texture2D" uid="uid://b0w26dywwaekf" path="res://Sprites/Player Sheets/NYI.png" id="9_qbusm"]
 [ext_resource type="Script" path="res://Code/State Machine/player_camera2D.gd" id="11_8ugi8"]
 [ext_resource type="Script" path="res://Code/State Machine/character_state_machine.gd" id="12_umigt"]
 [ext_resource type="Script" path="res://Code/State Machine/air_state.gd" id="13_v5hru"]
 [ext_resource type="Script" path="res://Code/State Machine/ground_state.gd" id="13_v31en"]
+[ext_resource type="Script" path="res://Scenes/Character/Player/climbing_state.gd" id="16_4g77w"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wfby3"]
+animation = &"climb"
+
+[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_dvjyf"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_hpkrl"]
+graph_offset = Vector2(-286.4, -7.2)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_wfby3")
+nodes/Animation/position = Vector2(-16, 160)
+nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_dvjyf")
+nodes/TimeScale/position = Vector2(144, 160)
+node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"Animation"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_de416"]
 animation = &"fall"
@@ -91,15 +105,21 @@ advance_mode = 2
 switch_mode = 2
 advance_mode = 2
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8x8ud"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0awpx"]
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_ddnw3"]
 states/End/position = Vector2(488, -31.789)
 states/Start/position = Vector2(-262.224, 131.168)
+states/climb/node = SubResource("AnimationNodeBlendTree_hpkrl")
+states/climb/position = Vector2(-211.6, 231.4)
 states/fall/node = SubResource("AnimationNodeAnimation_hpeps")
 states/fall/position = Vector2(87, 31.264)
 "states/fall from ledge/node" = SubResource("AnimationNodeAnimation_de416")
 "states/fall from ledge/position" = Vector2(69.6, 133.235)
 states/flip/node = SubResource("AnimationNodeAnimation_ijwa0")
-states/flip/position = Vector2(182, -24.6)
+states/flip/position = Vector2(196.4, -56.6)
 states/jump/node = SubResource("AnimationNodeAnimation_7u4gs")
 states/jump/position = Vector2(-138.6, -3.2)
 states/melee-air-swing/node = SubResource("AnimationNodeAnimation_2ujwg")
@@ -108,7 +128,7 @@ states/melee-swing/node = SubResource("AnimationNodeAnimation_gfur5")
 states/melee-swing/position = Vector2(-36.4, 237)
 states/move/node = SubResource("AnimationNodeBlendSpace1D_5w4wf")
 states/move/position = Vector2(-73, 130.774)
-transitions = ["Start", "move", SubResource("AnimationNodeStateMachineTransition_lvq20"), "move", "jump", SubResource("AnimationNodeStateMachineTransition_20yus"), "jump", "fall", SubResource("AnimationNodeStateMachineTransition_73isx"), "fall", "move", SubResource("AnimationNodeStateMachineTransition_auwrp"), "fall", "flip", SubResource("AnimationNodeStateMachineTransition_be2k0"), "flip", "fall", SubResource("AnimationNodeStateMachineTransition_50hyh"), "move", "fall from ledge", SubResource("AnimationNodeStateMachineTransition_1oftp"), "fall from ledge", "fall", SubResource("AnimationNodeStateMachineTransition_4r56i"), "fall", "melee-air-swing", SubResource("AnimationNodeStateMachineTransition_fjrtv"), "melee-air-swing", "move", SubResource("AnimationNodeStateMachineTransition_6hwud"), "melee-air-swing", "fall", SubResource("AnimationNodeStateMachineTransition_k0rsa"), "move", "melee-swing", SubResource("AnimationNodeStateMachineTransition_4yykm"), "melee-swing", "move", SubResource("AnimationNodeStateMachineTransition_ttx3x")]
+transitions = ["Start", "move", SubResource("AnimationNodeStateMachineTransition_lvq20"), "move", "jump", SubResource("AnimationNodeStateMachineTransition_20yus"), "jump", "fall", SubResource("AnimationNodeStateMachineTransition_73isx"), "fall", "move", SubResource("AnimationNodeStateMachineTransition_auwrp"), "fall", "flip", SubResource("AnimationNodeStateMachineTransition_be2k0"), "flip", "fall", SubResource("AnimationNodeStateMachineTransition_50hyh"), "move", "fall from ledge", SubResource("AnimationNodeStateMachineTransition_1oftp"), "fall from ledge", "fall", SubResource("AnimationNodeStateMachineTransition_4r56i"), "fall", "melee-air-swing", SubResource("AnimationNodeStateMachineTransition_fjrtv"), "melee-air-swing", "move", SubResource("AnimationNodeStateMachineTransition_6hwud"), "melee-air-swing", "fall", SubResource("AnimationNodeStateMachineTransition_k0rsa"), "move", "melee-swing", SubResource("AnimationNodeStateMachineTransition_4yykm"), "melee-swing", "move", SubResource("AnimationNodeStateMachineTransition_ttx3x"), "move", "climb", SubResource("AnimationNodeStateMachineTransition_8x8ud"), "climb", "move", SubResource("AnimationNodeStateMachineTransition_0awpx")]
 graph_offset = Vector2(-598, -157)
 
 [sub_resource type="Animation" id="Animation_6ntym"]
@@ -128,7 +148,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_hkcs6"]
 resource_name = "climb"
-length = 0.1
+length = 0.7
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -140,7 +160,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("9_qbusm")]
+"values": [ExtResource("4_2wxsc")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -152,7 +172,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [1]
+"values": [4]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -161,10 +181,10 @@ tracks/2/path = NodePath("Sprite2D:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [0]
+"values": [0, 1, 2, 3]
 }
 
 [sub_resource type="Animation" id="Animation_xtigb"]
@@ -465,253 +485,9 @@ _data = {
 "run": SubResource("Animation_puwf0")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_22m0a"]
-size = Vector2(10, 28)
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kdmb7"]
-load_path = "res://.godot/imported/Adventurer Sheet 30x30.png-7bbe3e1eceda1482c683a5257488cf26.ctex"
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_p3vrh"]
-atlas = SubResource("CompressedTexture2D_kdmb7")
-region = Rect2(0, 90, 30, 30)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8lpt0"]
-atlas = SubResource("CompressedTexture2D_kdmb7")
-region = Rect2(30, 90, 30, 30)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_55h1h"]
-atlas = SubResource("CompressedTexture2D_kdmb7")
-region = Rect2(0, 0, 30, 30)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jer3v"]
-atlas = SubResource("CompressedTexture2D_kdmb7")
-region = Rect2(30, 0, 30, 30)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_l4xym"]
-atlas = SubResource("CompressedTexture2D_kdmb7")
-region = Rect2(60, 0, 30, 30)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4po0w"]
-atlas = SubResource("CompressedTexture2D_kdmb7")
-region = Rect2(90, 0, 30, 30)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6lb07"]
-atlas = SubResource("CompressedTexture2D_kdmb7")
-region = Rect2(0, 60, 30, 30)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jt2d5"]
-atlas = SubResource("CompressedTexture2D_kdmb7")
-region = Rect2(30, 60, 30, 30)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gmr0d"]
-atlas = SubResource("CompressedTexture2D_kdmb7")
-region = Rect2(60, 60, 30, 30)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0p6x0"]
-atlas = SubResource("CompressedTexture2D_kdmb7")
-region = Rect2(90, 60, 30, 30)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ewe7g"]
-atlas = ExtResource("1_46141")
-region = Rect2(210, 60, 30, 30)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0nph6"]
-atlas = ExtResource("1_46141")
-region = Rect2(240, 60, 30, 30)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_t1upa"]
-atlas = ExtResource("1_46141")
-region = Rect2(333, 90, 50, 50)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ufajf"]
-atlas = ExtResource("1_46141")
-region = Rect2(120, 60, 30, 30)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xopui"]
-atlas = ExtResource("1_46141")
-region = Rect2(150, 60, 30, 30)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_snbxe"]
-atlas = ExtResource("1_46141")
-region = Rect2(180, 60, 30, 30)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vxnep"]
-atlas = ExtResource("1_46141")
-region = Rect2(330, 50, 50, 50)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lrsji"]
-atlas = ExtResource("1_46141")
-region = Rect2(60, 90, 30, 30)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_u0yef"]
-atlas = ExtResource("1_46141")
-region = Rect2(90, 90, 30, 30)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_l38cr"]
-atlas = ExtResource("1_46141")
-region = Rect2(120, 90, 30, 30)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_b34ek"]
-atlas = ExtResource("1_46141")
-region = Rect2(150, 90, 30, 30)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ub4yq"]
-atlas = ExtResource("1_46141")
-region = Rect2(0, 30, 30, 30)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sb2hn"]
-atlas = ExtResource("1_46141")
-region = Rect2(30, 30, 30, 30)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nlr36"]
-atlas = ExtResource("1_46141")
-region = Rect2(60, 30, 30, 30)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xmc5w"]
-atlas = ExtResource("1_46141")
-region = Rect2(90, 30, 30, 30)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jhs13"]
-atlas = ExtResource("1_46141")
-region = Rect2(120, 30, 30, 30)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_67xbr"]
-atlas = ExtResource("1_46141")
-region = Rect2(150, 30, 30, 30)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_x8c0h"]
-atlas = ExtResource("1_46141")
-region = Rect2(180, 30, 30, 30)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_qdf8u"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_p3vrh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8lpt0")
-}],
-"loop": true,
-"name": &"fall",
-"speed": 4.0
-}, {
-"frames": [{
-"duration": 2.0,
-"texture": SubResource("AtlasTexture_55h1h")
-}, {
-"duration": 1.5,
-"texture": SubResource("AtlasTexture_jer3v")
-}, {
-"duration": 1.4,
-"texture": SubResource("AtlasTexture_l4xym")
-}, {
-"duration": 1.2,
-"texture": SubResource("AtlasTexture_4po0w")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 3.0
-}, {
-"frames": [{
-"duration": 0.5,
-"texture": SubResource("AtlasTexture_6lb07")
-}, {
-"duration": 0.5,
-"texture": SubResource("AtlasTexture_jt2d5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gmr0d")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0p6x0")
-}],
-"loop": true,
-"name": &"jump",
-"speed": 6.0
-}, {
-"frames": [{
-"duration": 1.2,
-"texture": SubResource("AtlasTexture_ewe7g")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0nph6")
-}, {
-"duration": 1.2,
-"texture": SubResource("AtlasTexture_t1upa")
-}],
-"loop": true,
-"name": &"melee-attack-air",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.2,
-"texture": SubResource("AtlasTexture_ufajf")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xopui")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_snbxe")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vxnep")
-}],
-"loop": true,
-"name": &"melee-attack-ground",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_lrsji")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_u0yef")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_l38cr")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_b34ek")
-}],
-"loop": true,
-"name": &"multi-jump",
-"speed": 8.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ub4yq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_sb2hn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nlr36")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xmc5w")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jhs13")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_67xbr")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_x8c0h")
-}],
-"loop": true,
-"name": &"run",
-"speed": 9.0
-}]
-
-[sub_resource type="Gradient" id="Gradient_gjnvt"]
-offsets = PackedFloat32Array(1)
-colors = PackedColorArray(1, 1, 1, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_2v5qx"]
-gradient = SubResource("Gradient_gjnvt")
-width = 1
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ksi0l"]
+radius = 7.5
+height = 28.0
 
 [node name="player" type="CharacterBody2D"]
 scale = Vector2(2, 2)
@@ -723,20 +499,11 @@ platform_on_leave = 2
 safe_margin = 0.01
 script = ExtResource("1_bn15i")
 
-[node name="State Debug Label" type="Label" parent="."]
-offset_left = -7.0
-offset_top = -24.5
-offset_right = 91.0
-offset_bottom = 23.5
-scale = Vector2(0.125, 0.125)
-theme = ExtResource("2_4o5vp")
-text = "State: "
-script = ExtResource("3_vnc88")
-
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_ddnw3")
 anim_player = NodePath("../AnimationPlayer")
 active = true
+parameters/climb/TimeScale/scale = 1.0
 parameters/move/blend_position = 0.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -745,17 +512,13 @@ libraries = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 11)
-shape = SubResource("RectangleShape2D_22m0a")
+position = Vector2(0, 11.5)
+shape = SubResource("CapsuleShape2D_ksi0l")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_ibmon")
 hframes = 6
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-visible = false
-sprite_frames = SubResource("SpriteFrames_qdf8u")
-animation = &"fall"
+frame = 2
 metadata/_edit_lock_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -763,38 +526,6 @@ top_level = true
 zoom = Vector2(2, 2)
 script = ExtResource("11_8ugi8")
 metadata/_edit_lock_ = true
-
-[node name="RayCast2D Front" type="RayCast2D" parent="."]
-visible = false
-
-[node name="TextureRect" type="TextureRect" parent="RayCast2D Front"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -0.5
-offset_top = -0.5
-offset_right = 0.5
-offset_bottom = 0.5
-grow_horizontal = 2
-grow_vertical = 2
-texture = SubResource("GradientTexture1D_2v5qx")
-expand_mode = 1
-
-[node name="RayCast2D Back" type="RayCast2D" parent="."]
-visible = false
-
-[node name="TextureRect2" type="TextureRect" parent="RayCast2D Back"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -0.5
-offset_top = -0.5
-offset_right = 0.5
-offset_bottom = 0.5
-grow_horizontal = 2
-grow_vertical = 2
-texture = SubResource("GradientTexture1D_2v5qx")
-expand_mode = 1
 
 [node name="CharacterStateMachine" type="Node" parent="." node_paths=PackedStringArray("current_state")]
 script = ExtResource("12_umigt")
@@ -805,3 +536,20 @@ script = ExtResource("13_v31en")
 
 [node name="Air" type="Node" parent="CharacterStateMachine"]
 script = ExtResource("13_v5hru")
+
+[node name="Climbing" type="Node" parent="CharacterStateMachine"]
+script = ExtResource("16_4g77w")
+
+[node name="State Debug Label" type="Label" parent="."]
+offset_left = -24.0
+offset_top = -49.5
+offset_right = 74.0
+offset_bottom = -1.5
+scale = Vector2(0.125, 0.125)
+theme = ExtResource("2_4o5vp")
+text = "State: "
+script = ExtResource("3_vnc88")
+
+[node name="Debug Lines" type="Node2D" parent="."]
+top_level = true
+script = ExtResource("2_shrpx")
