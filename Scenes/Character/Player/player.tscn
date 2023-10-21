@@ -518,7 +518,6 @@ shape = SubResource("CapsuleShape2D_ksi0l")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_ibmon")
 hframes = 6
-frame = 2
 metadata/_edit_lock_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]

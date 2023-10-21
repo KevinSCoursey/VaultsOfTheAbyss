@@ -12,7 +12,7 @@ func state_physics_process(delta) -> void:
 		# Writing it this way simplifies the subsequent if/else statements.
 		character.velocity.y = 0
 		return
-	elif character.velocity.y >= character.step_height * 40:
+	elif character.velocity.y >= 400:
 		# If the character is in the air, transition to the air state. This can happen if they
 		# fall off of a ledge, for example. Giving a falling buffer of a little bit of velocity
 		# prevents an odd run-fall-run animation cycle when going down large-stepped stairs.

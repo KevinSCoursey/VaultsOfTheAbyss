@@ -4,7 +4,7 @@ func on_enter_state() -> void:
 	playback.travel("climb")
 
 func state_physics_process(_delta) -> void:
-	if !character.is_on_floor() && character.velocity.y >= character.step_height * 40:
+	if !character.is_on_floor() && character.velocity.y >= 400:
 		# If the character is in the air, transition to the air state. This can happen if they
 		# fall off of a ledge, for example. Giving a falling buffer of a little bit of velocity
 		# prevents an odd run-fall-run animation cycle when going down large-stepped stairs.

@@ -6,12 +6,5 @@ res://2D Navigation/Tile Set/tile_set_surface_5x5.tres
 res://Physics/crate_physics_material.tres
 res://Scenes/World/character_controller_test.tscn
 res://Scenes/Character/Player/player.tscn
-res://Code/Character/Player/player.gd
-res://Scenes/Character/Player/debug_lines.gd
-res://Code/State Machine/state.gd
 res://Code/State Machine/ground_state.gd
-res://Code/World/climb_zone.gd
 res://Scenes/Character/Player/climbing_state.gd
-res://Code/State Machine/character_state_machine.gd
-res://Code/State Machine/air_state.gd
-res://Scenes/Character/Player/state_debug_label.gd
