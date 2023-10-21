@@ -1,9 +1,9 @@
 class_name GroundState extends State
 
-func on_enter_state():
+func on_enter_state() -> void:
 	playback.travel("move")
 
-func state_physics_process(delta):
+func state_physics_process(delta) -> void:
 	check_if_trying_to_climb()
 	
 	if character.is_on_floor() or character.climbing_region_count > 0:
@@ -23,23 +23,22 @@ func state_physics_process(delta):
 	else:
 		# If the character is in the air, apply some gravity to it.
 		# We get here by the character being in the air but not by enough to exceed step height
-		# Applying 75% of gravity to the player gives it a nice feel
-		character.velocity.y += character.GRAVITY * 1.5 * delta
+		character.velocity.y += character.GRAVITY * 1.5 * delta * 1.5
 
-func state_input(event : InputEvent):
+func state_input(event : InputEvent) -> void:
 	# Handles player inputs
 	if event.is_action_pressed("jump"):
 		jump()
 
-func jump():
+func jump() -> void:
 	if character.is_on_floor():
 		# Allows the jump to occur if the player is on the ground. Jump is implemented
 		# by applying vertical (y) velocity and also setting the next state to be air
 		character.velocity.y = character.jump_velocity
 		next_state = air_state
 		playback.travel("jump")
-		
-func melee_attack():
+
+func melee_attack() -> void:
 	# Displays the melee attack animation and makes the character face the side of the screen that
 	# the mouse was clicked on
 	character.sprite_2d.flip_h = is_mouse_right_of_player()

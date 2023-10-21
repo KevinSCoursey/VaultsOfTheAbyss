@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://6lbm3ajnwxr7"]
+[gd_scene load_steps=58 format=3 uid="uid://6lbm3ajnwxr7"]
 
 [ext_resource type="Script" path="res://Code/Character/Player/player.gd" id="1_bn15i"]
 [ext_resource type="Theme" uid="uid://cs3x28ngyxi82" path="res://Themes/ui_theme.tres" id="2_4o5vp"]
@@ -485,19 +485,9 @@ _data = {
 "run": SubResource("Animation_puwf0")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_repka"]
-size = Vector2(10, 28)
-
-[sub_resource type="Gradient" id="Gradient_gjnvt"]
-offsets = PackedFloat32Array(1)
-colors = PackedColorArray(1, 1, 1, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_2v5qx"]
-gradient = SubResource("Gradient_gjnvt")
-width = 1
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ay66i"]
-size = Vector2(10, 10)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ksi0l"]
+radius = 7.5
+height = 28.0
 
 [node name="player" type="CharacterBody2D"]
 scale = Vector2(2, 2)
@@ -522,14 +512,13 @@ libraries = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 11)
-shape = SubResource("RectangleShape2D_repka")
-metadata/_edit_lock_ = true
+position = Vector2(0, 11.5)
+shape = SubResource("CapsuleShape2D_ksi0l")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_ibmon")
 hframes = 6
-frame = 3
+frame = 2
 metadata/_edit_lock_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -537,38 +526,6 @@ top_level = true
 zoom = Vector2(2, 2)
 script = ExtResource("11_8ugi8")
 metadata/_edit_lock_ = true
-
-[node name="RayCast2D Front" type="RayCast2D" parent="."]
-metadata/_edit_lock_ = true
-
-[node name="TextureRect" type="TextureRect" parent="RayCast2D Front"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -0.5
-offset_top = -0.5
-offset_right = 0.5
-offset_bottom = 0.5
-grow_horizontal = 2
-grow_vertical = 2
-texture = SubResource("GradientTexture1D_2v5qx")
-expand_mode = 1
-
-[node name="RayCast2D Back" type="RayCast2D" parent="."]
-metadata/_edit_lock_ = true
-
-[node name="TextureRect2" type="TextureRect" parent="RayCast2D Back"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -0.5
-offset_top = -0.5
-offset_right = 0.5
-offset_bottom = 0.5
-grow_horizontal = 2
-grow_vertical = 2
-texture = SubResource("GradientTexture1D_2v5qx")
-expand_mode = 1
 
 [node name="CharacterStateMachine" type="Node" parent="." node_paths=PackedStringArray("current_state")]
 script = ExtResource("12_umigt")
@@ -579,11 +536,9 @@ script = ExtResource("13_v31en")
 
 [node name="Air" type="Node" parent="CharacterStateMachine"]
 script = ExtResource("13_v5hru")
-can_move = null
 
 [node name="Climbing" type="Node" parent="CharacterStateMachine"]
 script = ExtResource("16_4g77w")
-can_move = null
 
 [node name="State Debug Label" type="Label" parent="."]
 offset_left = -24.0
@@ -598,10 +553,3 @@ script = ExtResource("3_vnc88")
 [node name="Debug Lines" type="Node2D" parent="."]
 top_level = true
 script = ExtResource("2_shrpx")
-
-[node name="Foot Area2D" type="Area2D" parent="."]
-visible = false
-
-[node name="Feet Collider" type="CollisionShape2D" parent="Foot Area2D"]
-position = Vector2(0, 20)
-shape = SubResource("RectangleShape2D_ay66i")

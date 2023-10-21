@@ -3,7 +3,7 @@ class_name AirState extends State
 # State behavior tracking
 var multi_jumps_used := 0
 
-func state_physics_process(delta):
+func state_physics_process(delta) -> void:
 	check_if_trying_to_climb()
 	
 	if character.is_on_floor():
@@ -14,12 +14,12 @@ func state_physics_process(delta):
 		# Applying 75% of gravity to the player gives it a nice feel
 		character.velocity.y += character.GRAVITY * 1.5 * delta
 
-func state_input(event : InputEvent):
+func state_input(event : InputEvent) -> void:
 	# Handles player inputs
 	if event.is_action_pressed("jump"):
 		jump()
 
-func jump():
+func jump() -> void:
 	if multi_jumps_used < character.multi_jumps_max:
 		# Allows the player to jump if already in the air as long as their used
 		# multi-jumps hasn't reached the max multi-jumps allowed. If they do perform
@@ -29,13 +29,13 @@ func jump():
 		character.velocity.y = character.jump_velocity
 		playback.travel("flip")
 
-func melee_attack():
+func melee_attack() -> void:
 	# Displays the melee attack animation and makes the character face the side of the screen that
 	# the mouse was clicked on
 	character.sprite_2d.flip_h = is_mouse_right_of_player()
 	playback.travel("melee-air-swing")
 
-func on_exit_state():
+func on_exit_state() -> void:
 	if next_state == ground_state:
 		# If the next state is the ground, reset the multi-jump counter. We don't want to reset
 		# this every time we leave this state because we could make things messy with air attack

@@ -7,7 +7,7 @@ class_name CharacterStateMachine extends Node
 @export var current_state : State
 var states : Array[State]
 
-func _ready():
+func _ready() -> void:
 	for child in get_children():
 		# Find all children that this state machine has
 		if child is State:
@@ -20,7 +20,7 @@ func _ready():
 			# Warn the user if there is somehow a child of the state machine that is not a State
 			push_warning("Child " + child.name + " is not a State, but its parent is " + name + "!")
 
-func _physics_process(delta):
+func _physics_process(delta) -> void:
 	if current_state.next_state != null:
 		# The next state will only be not null when a change of state is desired
 		switch_states(current_state.next_state)
@@ -29,11 +29,11 @@ func _physics_process(delta):
 		# Handles the current state's physics process
 		current_state.state_physics_process(delta)
 
-func _intput(event : InputEvent):
+func _intput(event : InputEvent) -> void:
 	# Provides the current state with the input event that has been given to the state machine
 	current_state.state_input(event)
 
-func switch_states(new_state : State):
+func switch_states(new_state : State) -> void:
 	# Changes which state the state machine is in
 	if current_state != null:
 		# If the current state isn't null, then we want to perform its exit process
@@ -49,6 +49,6 @@ func switch_states(new_state : State):
 		# Setting the next state to null prevents the state from trying to change immediately
 		current_state.next_state = null
 
-func check_if_can_move():
+func check_if_can_move() -> bool:
 	# Simply returns if the current state has motion enabled
 	return current_state.can_move
