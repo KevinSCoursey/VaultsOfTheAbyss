@@ -13,11 +13,14 @@ var step_height = 10
 var multi_jumps_max := 1
 # Climbing control
 var climbing_region_count = 0
+# Foot tracking
+var foot_collision = false
 
 # Nodes to get at runtime:
 @onready var debug_lines := $"Debug Lines"
 @onready var animation_tree := $AnimationTree
 @onready var sprite_2d := $Sprite2D
+@onready var foot_area2d := $"Foot Area2D"
 # Get the auto-loaded resource UserInputConstants from the scene root. This is a constant,
 # but cannot be assigned at runtime if it is defined as a const.
 @onready var USER_INPUT := $"/root/UserInputConstants"

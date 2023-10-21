@@ -35,6 +35,8 @@ func move_left_right(direction : Vector2, x_speed_multiplier : float):
 		# Applies movement in the left/right direction if a left/right input is recieved
 		# and the current character state machine state allows motion
 		character.velocity.x = direction.x * character.speed * x_speed_multiplier
+		if character.foot_collision:
+			character.velocity.y -= direction.x * character.speed * x_speed_multiplier * 1.25
 		character.sprite_2d.flip_h = direction.x < 0
 	else:
 		# Applies the velocity without a y component for the x

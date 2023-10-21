@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://6lbm3ajnwxr7"]
+[gd_scene load_steps=61 format=3 uid="uid://6lbm3ajnwxr7"]
 
 [ext_resource type="Script" path="res://Code/Character/Player/player.gd" id="1_bn15i"]
 [ext_resource type="Theme" uid="uid://cs3x28ngyxi82" path="res://Themes/ui_theme.tres" id="2_4o5vp"]
@@ -496,6 +496,9 @@ colors = PackedColorArray(1, 1, 1, 1)
 gradient = SubResource("Gradient_gjnvt")
 width = 1
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ay66i"]
+size = Vector2(10, 10)
+
 [node name="player" type="CharacterBody2D"]
 scale = Vector2(2, 2)
 slide_on_ceiling = false
@@ -521,10 +524,13 @@ libraries = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 11)
 shape = SubResource("RectangleShape2D_repka")
+metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_ibmon")
 hframes = 6
+frame = 3
+metadata/_edit_lock_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 top_level = true
@@ -533,6 +539,7 @@ script = ExtResource("11_8ugi8")
 metadata/_edit_lock_ = true
 
 [node name="RayCast2D Front" type="RayCast2D" parent="."]
+metadata/_edit_lock_ = true
 
 [node name="TextureRect" type="TextureRect" parent="RayCast2D Front"]
 anchors_preset = 15
@@ -548,6 +555,7 @@ texture = SubResource("GradientTexture1D_2v5qx")
 expand_mode = 1
 
 [node name="RayCast2D Back" type="RayCast2D" parent="."]
+metadata/_edit_lock_ = true
 
 [node name="TextureRect2" type="TextureRect" parent="RayCast2D Back"]
 anchors_preset = 15
@@ -590,3 +598,10 @@ script = ExtResource("3_vnc88")
 [node name="Debug Lines" type="Node2D" parent="."]
 top_level = true
 script = ExtResource("2_shrpx")
+
+[node name="Foot Area2D" type="Area2D" parent="."]
+visible = false
+
+[node name="Feet Collider" type="CollisionShape2D" parent="Foot Area2D"]
+position = Vector2(0, 20)
+shape = SubResource("RectangleShape2D_ay66i")
